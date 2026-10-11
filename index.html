@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5e8f2">
   <title>Livia's Edenic Arbor</title>
 
@@ -16,8 +16,7 @@
       --rose: #b47b9d;
       --deep-rose: #906487;
       --ink: #795777;
-      --paper: rgba(255, 249, 253, 0.84);
-      --border: rgba(177, 126, 161, 0.4);
+      --border: rgba(177, 126, 161, .42);
     }
 
     * {
@@ -36,10 +35,10 @@
       background-color: #f5e8f2;
       background-image:
         linear-gradient(
-          rgba(255, 247, 252, 0.25),
-          rgba(255, 247, 252, 0.25)
+          rgba(255, 247, 252, .12),
+          rgba(255, 247, 252, .12)
         ),
-        url("./edenic-background.jpg");
+        url("./whimsy-background.png");
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -48,22 +47,21 @@
     }
 
     .page {
-      position: relative;
-      width: min(100% - 28px, 900px);
+      width: min(100% - 26px, 900px);
       margin: 0 auto;
-      padding: 48px 0 42px;
+      padding: 42px 0 36px;
     }
 
     header {
-      text-align: center;
       padding: 0 8px 24px;
+      text-align: center;
     }
 
     .eyebrow {
       margin: 0 0 12px;
       color: var(--deep-rose);
-      font-size: 12px;
-      letter-spacing: 0.22em;
+      font-size: 11px;
+      letter-spacing: .22em;
       line-height: 1.8;
       text-transform: uppercase;
     }
@@ -75,21 +73,21 @@
       font-size: clamp(46px, 9vw, 82px);
       font-weight: 400;
       line-height: 1.2;
-      text-shadow: 1px 2px 0 rgba(255, 255, 255, 0.9);
+      text-shadow: 1px 2px rgba(255, 255, 255, .85);
     }
 
     .subtitle {
-      margin: 10px 0 0;
+      margin: 9px 0 0;
       color: #987196;
       font-family: "Playfair Display", serif;
-      font-size: clamp(14px, 3vw, 19px);
+      font-size: clamp(14px, 3vw, 18px);
       font-style: italic;
       line-height: 1.7;
     }
 
     .intro {
-      max-width: 650px;
-      margin: 25px auto 0;
+      max-width: 630px;
+      margin: 22px auto 0;
       font-size: clamp(15px, 3vw, 18px);
       line-height: 1.8;
     }
@@ -100,14 +98,16 @@
     }
 
     .panel {
-      margin: 20px auto 30px;
+      margin: 20px auto 28px;
       padding: clamp(18px, 4vw, 30px);
       border: 1px solid var(--border);
       border-radius: 23px;
-      background: var(--paper);
-      box-shadow: 0 10px 32px rgba(127, 83, 119, 0.10);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
+      background: rgba(255, 249, 253, .78);
+      box-shadow:
+        0 10px 32px rgba(127, 83, 119, .11),
+        inset 0 0 0 4px rgba(255, 255, 255, .23);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
     }
 
     .section-heading {
@@ -116,12 +116,11 @@
       text-align: center;
       font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: .2em;
       line-height: 1.8;
       text-transform: uppercase;
     }
 
-    /* Smaller secondary headings */
     .section-title {
       margin: 5px 0 10px;
       color: var(--rose);
@@ -147,8 +146,8 @@
       overflow: hidden;
       border: 1px solid var(--border);
       border-radius: 14px;
-      background: rgba(255, 248, 252, 0.95);
-      box-shadow: 0 7px 22px rgba(150, 97, 136, 0.12);
+      background: #fff8fc;
+      box-shadow: 0 7px 22px rgba(150, 97, 136, .12);
     }
 
     #preview {
@@ -182,18 +181,18 @@
 
     .upload-label {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       min-height: 45px;
       padding: 11px 17px;
       border: 1px solid #c99ab9;
       border-radius: 999px;
-      background: rgba(248, 230, 241, 0.94);
+      background: rgba(248, 230, 241, .95);
       color: #875f82;
       font-size: 16px;
       text-align: center;
       cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
+      transition: background .2s, transform .2s;
     }
 
     .upload-label:hover {
@@ -230,12 +229,12 @@
       padding: 10px 12px;
       border: 1px solid #c99ab9;
       border-radius: 999px;
-      background: rgba(255, 247, 252, 0.96);
+      background: rgba(255, 247, 252, .96);
       color: #875f82;
       font-family: inherit;
       font-size: 16px;
       cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
+      transition: background .2s, transform .2s;
     }
 
     button:hover {
@@ -249,12 +248,8 @@
       color: #fffafd;
     }
 
-    button.primary:hover {
-      background: linear-gradient(135deg, #cfa3c1, #bfa0d3);
-    }
-
     button:disabled {
-      opacity: 0.5;
+      opacity: .5;
       cursor: not-allowed;
       transform: none;
     }
@@ -266,10 +261,6 @@
       text-align: center;
       font-size: 14px;
       line-height: 1.6;
-    }
-
-    .wishes {
-      text-align: center;
     }
 
     .wish-links {
@@ -284,12 +275,13 @@
       padding: 12px 16px;
       border: 1px solid var(--border);
       border-radius: 999px;
-      background: rgba(255, 248, 252, 0.9);
+      background: rgba(255, 248, 252, .92);
       color: var(--deep-rose);
       font-size: 16px;
       line-height: 1.5;
+      text-align: center;
       text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
+      transition: background .2s, transform .2s;
     }
 
     .wish-link:hover {
@@ -308,7 +300,7 @@
       margin: 0 0 10px;
       color: var(--deep-rose);
       font-size: 11px;
-      letter-spacing: 0.19em;
+      letter-spacing: .19em;
       line-height: 1.8;
       text-transform: uppercase;
     }
@@ -322,7 +314,7 @@
     .credits a {
       color: var(--deep-rose);
       text-decoration: underline;
-      text-decoration-color: rgba(180, 123, 157, 0.5);
+      text-decoration-color: rgba(180, 123, 157, .5);
       text-underline-offset: 3px;
     }
 
@@ -333,19 +325,11 @@
 
       .page {
         width: min(100% - 20px, 900px);
-        padding-top: 34px;
-      }
-
-      header {
-        padding-bottom: 18px;
+        padding-top: 32px;
       }
 
       h1 {
         font-size: clamp(43px, 11vw, 62px);
-      }
-
-      .intro {
-        margin-top: 20px;
       }
 
       .panel {
@@ -422,7 +406,7 @@
       </div>
     </section>
 
-    <section class="panel wishes" aria-labelledby="wishes-title">
+    <section class="panel" aria-labelledby="wishes-title">
       <p class="section-heading">The Roseate Missives</p>
       <h2 class="section-title" id="wishes-title">
         A Posy of Heartfelt Benedictions
@@ -467,7 +451,6 @@
   <script>
     const canvas = document.getElementById("preview");
     const ctx = canvas.getContext("2d");
-
     const photoInput = document.getElementById("photo");
     const zoomInput = document.getElementById("zoom");
     const resetButton = document.getElementById("reset");
@@ -479,8 +462,8 @@
 
     let photo = null;
     let photoScale = 1;
-    let photoX = canvas.width / 2;
-    let photoY = canvas.height / 2;
+    let photoX = 400;
+    let photoY = 400;
     let dragging = false;
     let pointerStartX = 0;
     let pointerStartY = 0;
@@ -491,37 +474,35 @@
       const gradient = ctx.createLinearGradient(0, 0, 800, 800);
       gradient.addColorStop(0, "#f7e5f0");
       gradient.addColorStop(1, "#eee4f5");
-
       ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillRect(0, 0, 800, 800);
     }
 
     function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, 800, 800);
 
       if (photo && photo.complete) {
         const baseScale = Math.max(
-          canvas.width / photo.width,
-          canvas.height / photo.height
+          800 / photo.width,
+          800 / photo.height
         );
-
-        const finalScale = baseScale * photoScale;
-        const drawWidth = photo.width * finalScale;
-        const drawHeight = photo.height * finalScale;
+        const scale = baseScale * photoScale;
+        const w = photo.width * scale;
+        const h = photo.height * scale;
 
         ctx.drawImage(
           photo,
-          photoX - drawWidth / 2,
-          photoY - drawHeight / 2,
-          drawWidth,
-          drawHeight
+          photoX - w / 2,
+          photoY - h / 2,
+          w,
+          h
         );
       } else {
         drawPlaceholder();
       }
 
       if (frame.complete && frame.naturalWidth > 0) {
-        ctx.drawImage(frame, 0, 0, canvas.width, canvas.height);
+        ctx.drawImage(frame, 0, 0, 800, 800);
       }
     }
 
@@ -533,7 +514,7 @@
     frame.onerror = () => {
       draw();
       statusText.textContent =
-        "Frame not found. Check that livia-frame.png exists in your repository.";
+        "Frame not found. Check that livia-frame.png is in your repository.";
     };
 
     photoInput.addEventListener("change", (event) => {
@@ -548,25 +529,25 @@
       const reader = new FileReader();
 
       reader.onload = () => {
-        const uploadedImage = new Image();
+        const uploaded = new Image();
 
-        uploadedImage.onload = () => {
-          photo = uploadedImage;
+        uploaded.onload = () => {
+          photo = uploaded;
           photoScale = 1;
           zoomInput.value = "1";
-          photoX = canvas.width / 2;
-          photoY = canvas.height / 2;
+          photoX = 400;
+          photoY = 400;
           downloadButton.disabled = false;
           statusText.textContent =
             "Photograph added! Drag it around or adjust the scale.";
           draw();
         };
 
-        uploadedImage.onerror = () => {
+        uploaded.onerror = () => {
           statusText.textContent = "That photograph could not be opened.";
         };
 
-        uploadedImage.src = reader.result;
+        uploaded.src = reader.result;
       };
 
       reader.readAsDataURL(file);
@@ -580,8 +561,8 @@
     resetButton.addEventListener("click", () => {
       photoScale = 1;
       zoomInput.value = "1";
-      photoX = canvas.width / 2;
-      photoY = canvas.height / 2;
+      photoX = 400;
+      photoY = 400;
       draw();
 
       statusText.textContent = photo
@@ -593,8 +574,8 @@
       const rect = canvas.getBoundingClientRect();
 
       return {
-        x: (event.clientX - rect.left) * (canvas.width / rect.width),
-        y: (event.clientY - rect.top) * (canvas.height / rect.height)
+        x: (event.clientX - rect.left) * (800 / rect.width),
+        y: (event.clientY - rect.top) * (800 / rect.height)
       };
     }
 
@@ -638,20 +619,22 @@
 
       canvas.toBlob((blob) => {
         if (!blob) {
-          statusText.textContent = "The image could not be saved. Please try again.";
+          statusText.textContent =
+            "The image could not be saved. Please try again.";
           return;
         }
 
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
         link.href = url;
-        link.download = "livia-edenic-27-twibbon.png";
+        link.download = "liviaedenic27.png";
         document.body.appendChild(link);
         link.click();
         link.remove();
-        URL.revokeObjectURL(url);
 
-        statusText.textContent = "Your twibbon has been saved.";
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        statusText.textContent =
+          "Your twibbon has been saved as liviaedenic27.png.";
       }, "image/png");
     });
 
