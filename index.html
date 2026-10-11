@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -17,9 +17,7 @@
       --deep-rose: #906487;
       --ink: #795777;
       --border: rgba(177, 126, 161, .35);
-      --panel: rgba(255, 249, 253, .84);
-      --handwritten: "Caveat", cursive;
-      --editorial: "Cormorant Garamond", serif;
+      --panel: rgba(255, 249, 253, .86);
     }
 
     * {
@@ -34,7 +32,7 @@
       margin: 0;
       min-height: 100vh;
       color: var(--ink);
-      font-family: var(--editorial);
+      font-family: "Cormorant Garamond", serif;
       background-color: #f7edf5;
       background-image:
         radial-gradient(
@@ -68,7 +66,7 @@
       padding: 1px 0 30px;
     }
 
-    /* Main heading */
+    /* Header */
 
     header {
       margin-top: 54px;
@@ -77,20 +75,21 @@
     }
 
     .eyebrow {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       color: var(--deep-rose);
-      font-family: var(--handwritten);
-      font-size: 20px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 13px;
       font-weight: 500;
-      letter-spacing: .06em;
-      line-height: 1.5;
+      letter-spacing: .18em;
+      line-height: 1.7;
+      text-transform: uppercase;
     }
 
     h1 {
       margin: 0;
       color: var(--rose);
       font-family: "Great Vibes", cursive;
-      font-size: clamp(46px, 9vw, 82px);
+      font-size: clamp(46px, 9vw, 78px);
       font-weight: 400;
       line-height: 1.2;
       text-shadow: 1px 2px rgba(255, 255, 255, .85);
@@ -100,15 +99,15 @@
       margin: 9px 0 0;
       color: #987196;
       font-family: "Playfair Display", serif;
-      font-size: clamp(14px, 3vw, 18px);
+      font-size: clamp(13px, 3vw, 17px);
       font-style: italic;
       line-height: 1.7;
     }
 
     .intro {
-      max-width: 570px;
-      margin: 22px auto 0;
-      font-size: clamp(16px, 3vw, 18px);
+      max-width: 550px;
+      margin: 21px auto 0;
+      font-size: clamp(15px, 3vw, 17px);
       line-height: 1.8;
     }
 
@@ -122,13 +121,13 @@
     .panel {
       width: calc(100% - 36px);
       max-width: 620px;
-      margin: 18px auto 24px;
-      padding: clamp(18px, 4vw, 28px);
+      margin: 18px auto 23px;
+      padding: clamp(18px, 4vw, 27px);
       border: 1px solid var(--border);
-      border-radius: 23px;
+      border-radius: 22px;
       background: var(--panel);
       box-shadow:
-        0 9px 28px rgba(127, 83, 119, .09),
+        0 9px 27px rgba(127, 83, 119, .09),
         inset 0 0 0 3px rgba(255, 255, 255, .25);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
@@ -138,29 +137,30 @@
       margin: 0;
       color: var(--deep-rose);
       text-align: center;
-      font-family: var(--handwritten);
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: .08em;
-      line-height: 1.5;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .19em;
+      line-height: 1.7;
+      text-transform: uppercase;
     }
 
     .section-title {
-      margin: 5px 0 11px;
+      margin: 6px 0 11px;
       color: var(--rose);
       text-align: center;
       font-family: "Playfair Display", serif;
-      font-size: clamp(20px, 4vw, 26px);
+      font-size: clamp(19px, 3.8vw, 24px);
       font-weight: 400;
       font-style: italic;
       line-height: 1.45;
     }
 
     .section-description {
-      max-width: 500px;
-      margin: 0 auto 23px;
+      max-width: 490px;
+      margin: 0 auto 22px;
       text-align: center;
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.8;
     }
 
@@ -174,7 +174,7 @@
       border: 1px solid var(--border);
       border-radius: 14px;
       background: #f3e8f5;
-      box-shadow: 0 7px 22px rgba(150, 97, 136, .10);
+      box-shadow: 0 6px 20px rgba(150, 97, 136, .10);
     }
 
     #preview {
@@ -191,20 +191,20 @@
     }
 
     .instructions {
-      margin: 13px 0 20px;
+      margin: 13px 0 19px;
       color: #947590;
       text-align: center;
-      font-family: var(--handwritten);
-      font-size: 21px;
-      font-weight: 500;
-      line-height: 1.45;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1.65;
     }
 
     /* Upload and controls */
 
     .controls {
       display: grid;
-      gap: 15px;
+      gap: 14px;
       width: 100%;
       max-width: 480px;
       margin: 0 auto;
@@ -214,14 +214,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 47px;
-      padding: 10px 16px;
+      min-height: 44px;
+      padding: 10px 15px;
       border: 1px solid #c99ab9;
       border-radius: 999px;
       background: rgba(248, 230, 241, .95);
       color: #875f82;
-      font-family: var(--handwritten);
-      font-size: 23px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 16px;
       font-weight: 600;
       text-align: center;
       cursor: pointer;
@@ -242,9 +242,8 @@
       grid-template-columns: 1fr;
       gap: 5px;
       color: #987196;
-      font-family: var(--handwritten);
-      font-size: 21px;
-      font-weight: 500;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 16px;
     }
 
     .zoom-heading {
@@ -267,21 +266,21 @@
     .button-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 9px;
       margin-top: 2px;
     }
 
     button {
-      min-height: 52px;
-      padding: 10px;
+      min-height: 48px;
+      padding: 9px 10px;
       border: 1px solid #c99ab9;
-      border-radius: 16px;
+      border-radius: 14px;
       background: rgba(255, 247, 252, .96);
       color: #875f82;
-      font-family: var(--handwritten);
-      font-size: 21px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 16px;
       font-weight: 600;
-      line-height: 1.2;
+      line-height: 1.3;
       cursor: pointer;
       transition: background .2s, transform .2s;
     }
@@ -292,7 +291,7 @@
     }
 
     button.primary {
-      border-color: #c99ab9;
+      border-color: #d8b4cc;
       background: linear-gradient(135deg, #dcb4d0, #cbaedc);
       color: #fffafd;
     }
@@ -304,17 +303,17 @@
     }
 
     .status {
-      min-height: 20px;
+      min-height: 19px;
       margin: 0;
       color: #947590;
       text-align: center;
-      font-family: var(--handwritten);
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 1.4;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 14px;
+      font-style: italic;
+      line-height: 1.5;
     }
 
-    /* Wishes */
+    /* Related links */
 
     .wish-links {
       display: grid;
@@ -325,17 +324,15 @@
     }
 
     .wish-link {
-      display: block;
-      padding: 11px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 15px;
       border: 1px solid var(--border);
-      border-radius: 999px;
+      border-radius: 14px;
       background: rgba(255, 248, 252, .92);
       color: var(--deep-rose);
-      font-family: var(--handwritten);
-      font-size: 21px;
-      font-weight: 500;
-      line-height: 1.4;
-      text-align: center;
       text-decoration: none;
       transition: background .2s, transform .2s;
     }
@@ -345,13 +342,39 @@
       transform: translateY(-1px);
     }
 
+    .wish-link-text {
+      display: grid;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .wish-link-title {
+      font-family: "Playfair Display", serif;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .wish-link-caption {
+      color: #a1829a;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 13px;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .wish-link-icon {
+      flex-shrink: 0;
+      color: #b4a44f;
+      font-size: 19px;
+    }
+
     /* Credits */
 
     .credits {
       width: calc(100% - 36px);
       max-width: 620px;
       margin: 26px auto 0;
-      padding: 22px 12px 10px;
+      padding: 21px 12px 10px;
       border-top: 1px solid var(--border);
       text-align: center;
     }
@@ -359,15 +382,17 @@
     .credits-title {
       margin: 0 0 10px;
       color: var(--deep-rose);
-      font-family: var(--handwritten);
-      font-size: 21px;
-      font-weight: 600;
-      line-height: 1.4;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .16em;
+      line-height: 1.7;
+      text-transform: uppercase;
     }
 
     .credits p {
       margin: 7px 0;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 1.7;
     }
 
@@ -391,12 +416,24 @@
       }
 
       header {
-        margin-top: 44px;
-        padding: 0 23px 20px;
+        margin-top: 45px;
+        padding: 0 22px 19px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
       }
 
       h1 {
-        font-size: clamp(43px, 11vw, 62px);
+        font-size: clamp(43px, 10.5vw, 60px);
+      }
+
+      .subtitle {
+        font-size: 14px;
+      }
+
+      .intro {
+        font-size: 15px;
       }
 
       .panel {
@@ -404,37 +441,46 @@
         padding: 19px 14px;
         margin-top: 16px;
         margin-bottom: 20px;
-        border-radius: 20px;
+        border-radius: 21px;
       }
 
       .section-heading {
-        font-size: 19px;
+        font-size: 12px;
+      }
+
+      .section-title {
+        font-size: 20px;
       }
 
       .section-description {
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .instructions {
-        font-size: 20px;
+        font-size: 15px;
       }
 
-      .upload-label {
-        font-size: 22px;
+      .upload-label,
+      .zoom-row,
+      button {
+        font-size: 15px;
       }
 
-      .zoom-row {
-        font-size: 20px;
+      .button-row {
+        gap: 8px;
       }
 
       button {
-        min-height: 54px;
-        padding: 9px 7px;
-        font-size: 20px;
+        min-height: 48px;
+        padding: 8px 6px;
       }
 
-      .wish-link {
-        font-size: 20px;
+      .wish-link-title {
+        font-size: 14px;
+      }
+
+      .wish-link-caption {
+        font-size: 12px;
       }
 
       .credits {
@@ -464,6 +510,7 @@
 
     <header>
       <p class="eyebrow">A Sacred Jubilee Dreamscape</p>
+
       <h1>Livia's Edenic Arbor</h1>
 
       <p class="subtitle">
@@ -473,9 +520,11 @@
       <p class="intro">
         frame your heart in this stardust vignette and join the whimsical
         celebration under the spell of
-        <strong>#LiviaEdenic27!</strong> 
+        <strong>#LiviaEdenic27!</strong> 🌸✨
       </p>
     </header>
+
+    <!-- Twibbon atelier -->
 
     <section class="panel" aria-labelledby="maker-title">
       <p class="section-heading">The Twibbon Atelier</p>
@@ -486,7 +535,7 @@
 
       <p class="section-description">
         Choose a photograph, arrange it to your liking, and keep a little
-        piece of this celebration with you.
+        piece of this celebration with you. 🦢
       </p>
 
       <div class="canvas-wrap">
@@ -499,19 +548,19 @@
       </div>
 
       <p class="instructions">
-        upload a photograph, then drag it to adjust its position.
+        upload a photograph, then drag it to adjust its position. ♡
       </p>
 
       <div class="controls">
         <label class="upload-label" for="photo">
-          ♡ Choose Your Photograph ♡
+          📷 Choose Your Photograph
         </label>
 
         <input id="photo" type="file" accept="image/*">
 
         <div class="zoom-row">
           <div class="zoom-heading">
-            <label for="zoom">little zoom adjustment</label>
+            <label for="zoom">Zoom</label>
             <span id="zoomValue">100%</span>
           </div>
 
@@ -531,15 +580,17 @@
           </button>
 
           <button id="download" class="primary" type="button" disabled>
-            ♡ Save My Twibbon
+            ⤓ Download HD
           </button>
         </div>
 
         <p class="status" id="status" aria-live="polite">
-          your little canvas is ready!
+          your little canvas is ready ♡
         </p>
       </div>
     </section>
+
+    <!-- Wishes and related links -->
 
     <section class="panel" aria-labelledby="wishes-title">
       <p class="section-heading">The Roseate Missives</p>
@@ -551,7 +602,7 @@
       <p class="section-description">
         A little repository of fond felicitations, petal-soft affections,
         and starry-eyed well-wishes, lovingly bestowed upon Livia's most
-        wondrous natal jubilee.
+        wondrous natal jubilee. 🌷
       </p>
 
       <div class="wish-links">
@@ -560,16 +611,30 @@
           href="https://t.me/ettourdearly"
           target="_blank"
           rel="noopener noreferrer"
-        >ettourdearly ♡</a>
+        >
+          <span class="wish-link-text">
+            <span class="wish-link-title">Charmaine Fernsby</span>
+            <span class="wish-link-caption">click to visit the host's account.</span>
+          </span>
+          <span class="wish-link-icon" aria-hidden="true">↗</span>
+        </a>
 
         <a
           class="wish-link"
           href="https://t.me/sylphidewaltz"
           target="_blank"
           rel="noopener noreferrer"
-        >sylphidewaltz ♡</a>
+        >
+          <span class="wish-link-text">
+            <span class="wish-link-title">Aureate Threnody</span>
+            <span class="wish-link-caption">click to visit the celebration channel.</span>
+          </span>
+          <span class="wish-link-icon" aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
+
+    <!-- Credits -->
 
     <footer class="credits">
       <p class="credits-title">
@@ -582,7 +647,7 @@
           href="https://t.me/artlucas"
           target="_blank"
           rel="noopener noreferrer"
-        >@artlucas</a>
+        >@artlucas</a> ✧
       </p>
 
       <p>
@@ -591,7 +656,7 @@
           href="https://t.me/trinketslab"
           target="_blank"
           rel="noopener noreferrer"
-        >@trinketslab</a>
+        >@trinketslab</a> ♡
       </p>
     </footer>
 
@@ -608,8 +673,7 @@
     const downloadButton = document.getElementById("download");
     const statusText = document.getElementById("status");
 
-    // Frame filename must be livia-frame.png
-    // Place it in the same folder as index.html.
+    // Make sure livia-frame.png is in the same folder as index.html.
     const frame = new Image();
 
     let frameLoaded = false;
@@ -632,14 +696,6 @@
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, 800, 800);
-
-      if (!frameLoaded) {
-        ctx.fillStyle = "#906487";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.font = "24px Georgia";
-        ctx.fillText("Loading your little frame...", 400, 400);
-      }
     }
 
     function draw() {
@@ -666,6 +722,7 @@
         drawPlaceholder();
       }
 
+      // Keep the decorative frame above the user's photograph.
       if (frameLoaded) {
         ctx.drawImage(frame, 0, 0, 800, 800);
       }
@@ -675,9 +732,8 @@
       frameLoaded = true;
       draw();
 
-      statusText.textContent = photo
-        ? "your twibbon frame is ready!"
-        : "frame is ready! choose your photograph ♡";
+      statusText.textContent =
+        "frame is ready! choose your photograph ♡";
     };
 
     frame.onerror = () => {
@@ -692,7 +748,6 @@
 
     photoInput.addEventListener("change", (event) => {
       const file = event.target.files && event.target.files[0];
-
       if (!file) return;
 
       if (!file.type.startsWith("image/")) {
@@ -716,14 +771,14 @@
           downloadButton.disabled = false;
 
           statusText.textContent =
-            "lovely! drag your photo or adjust the zoom ♡";
+            "lovely! drag your photograph or adjust the zoom ♡";
 
           draw();
         };
 
         uploaded.onerror = () => {
           statusText.textContent =
-            "couldn't open that photograph — try another one!";
+            "couldn't open that photograph — please try another.";
         };
 
         uploaded.src = reader.result;
@@ -731,7 +786,7 @@
 
       reader.onerror = () => {
         statusText.textContent =
-          "couldn't read the photograph — please try again ♡";
+          "couldn't read the photograph — please try again.";
       };
 
       reader.readAsDataURL(file);
@@ -753,8 +808,8 @@
       draw();
 
       statusText.textContent = photo
-        ? "photo position and zoom reset — all fresh!"
-        : "choose a photograph first to begin ♡";
+        ? "position and zoom reset — all fresh! ♡"
+        : "choose a photograph first to begin.";
     });
 
     function getCanvasPoint(event) {
@@ -817,7 +872,7 @@
       canvas.toBlob((blob) => {
         if (!blob) {
           statusText.textContent =
-            "couldn't save the image — please try again!";
+            "couldn't save the image — please try again.";
           return;
         }
 
@@ -834,7 +889,7 @@
         setTimeout(() => URL.revokeObjectURL(url), 1000);
 
         statusText.textContent =
-          "saved! your file is liviaedenic27.png ♡";
+          "saved! your twibbon is ready ♡";
       }, "image/png");
     });
 
