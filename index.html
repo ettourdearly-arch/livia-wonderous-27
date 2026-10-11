@@ -1,516 +1,657 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f9e9f1">
-<title>Livia's Edenic Arbor ✿</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livia's Edenic Arbor</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap');
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
-:root {
-  --pink: #c58bab;
-  --rose: #a66f91;
-  --plum: #805b79;
-  --line: #e8c8da;
-}
+  <style>
+    :root {
+      --rose: #b47b9d;
+      --deep-rose: #976487;
+      --soft-rose: #f5dfec;
+      --lavender: #eee3f5;
+      --cream: #fff9fc;
+      --ink: #795777;
+    }
 
-* { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  color: var(--plum);
-  font-family: 'Cormorant Garamond', serif;
-  background-color: #fbf0f6;
-  background-image:
-    radial-gradient(ellipse at 10% 10%, #e8c4dc 0%, transparent 35%),
-    radial-gradient(ellipse at 90% 20%, #e3d4f0 0%, transparent 33%),
-    radial-gradient(ellipse at 10% 70%, #f2d4dc 0%, transparent 35%),
-    radial-gradient(ellipse at 90% 85%, #e8d8ee 0%, transparent 35%),
-    repeating-linear-gradient(12deg, #ffffff0a 0 1px, transparent 1px 5px);
-  background-attachment: fixed;
-  overflow-x: hidden;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.doodle-border {
-  text-align: center;
-  color: #b486a6;
-  font-size: 17px;
-  letter-spacing: 4px;
-  line-height: 2;
-  padding: 12px 8px;
-  overflow-wrap: anywhere;
-  text-shadow: 0 0 12px #fff;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Cormorant Garamond", serif;
+      background:
+        radial-gradient(ellipse at 12% 12%, rgba(238, 190, 219, .55), transparent 40%),
+        radial-gradient(ellipse at 90% 25%, rgba(220, 204, 239, .55), transparent 38%),
+        radial-gradient(ellipse at 50% 85%, rgba(255, 242, 248, .95), transparent 45%),
+        linear-gradient(135deg, #f8eaf3, #f5edf8 52%, #fff6fa);
+      overflow-x: hidden;
+    }
 
-.page {
-  width: min(100%, 570px);
-  margin: auto;
-  padding: 0 17px 35px;
-}
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .16;
+      background-image:
+        radial-gradient(#b783a8 .65px, transparent .65px);
+      background-size: 12px 12px;
+    }
 
-.eyebrow {
-  text-align: center;
-  font-size: 11px;
-  letter-spacing: 3px;
-  line-height: 1.9;
-  color: #a97998;
-}
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(100% - 28px, 920px);
+      margin: 0 auto;
+      padding: 44px 0 54px;
+    }
 
-h1 {
-  text-align: center;
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(43px, 11vw, 68px);
-  font-weight: 400;
-  line-height: 1.25;
-  margin: 10px 0;
-  color: #ad789b;
-  text-shadow: 1px 2px #fff, 0 0 16px #e8c4da;
-}
+    header {
+      text-align: center;
+      padding: 0 8px 26px;
+    }
 
-.subtitle {
-  text-align: center;
-  font-size: 18px;
-  font-style: italic;
-  margin: 4px 0 17px;
-}
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--rose);
+      font-size: 13px;
+      letter-spacing: .28em;
+      line-height: 1.8;
+      text-transform: uppercase;
+    }
 
-.intro {
-  text-align: center;
-  font-size: 17px;
-  line-height: 1.65;
-  padding: 0 5px;
-}
+    h1 {
+      margin: 0;
+      color: var(--rose);
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(48px, 10vw, 88px);
+      font-weight: 400;
+      line-height: 1.15;
+      text-shadow: 1px 2px 0 #fff8fc, 2px 3px 0 rgba(180, 123, 157, .16);
+    }
 
-.ornament {
-  text-align: center;
-  color: #bd8bab;
-  font-size: 17px;
-  letter-spacing: 3px;
-  margin: 17px 0;
-}
+    .subtitle {
+      margin: 12px 0 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(15px, 3.5vw, 20px);
+      font-style: italic;
+      line-height: 1.7;
+      color: #9d7399;
+    }
 
-.card {
-  position: relative;
-  background:
-    radial-gradient(ellipse at 0% 0%, #f8e4efaa, transparent 45%),
-    radial-gradient(ellipse at 100% 100%, #eee2f5aa, transparent 45%),
-    #fffaf2ed;
-  border: 1px solid var(--line);
-  border-radius: 24px 24px 35px 22px;
-  padding: 17px;
-  box-shadow: 0 9px 30px #bc8ba31c, inset 0 0 22px #f1dce91c;
-}
+    .intro {
+      max-width: 650px;
+      margin: 28px auto 0;
+      font-size: clamp(18px, 4vw, 22px);
+      line-height: 1.65;
+    }
 
-.card::before {
-  content: "✧";
-  position: absolute;
-  top: -15px;
-  right: 20px;
-  background: #fff6fa;
-  color: #bd8bab;
-  font-size: 25px;
-  padding: 0 6px;
-}
+    .intro strong {
+      font-weight: 600;
+      color: var(--deep-rose);
+    }
 
-h2 {
-  text-align: center;
-  font-size: 26px;
-  font-weight: 500;
-  margin: 5px 0;
-}
+    .panel {
+      position: relative;
+      margin: 20px auto 34px;
+      padding: clamp(18px, 4vw, 32px);
+      border: 1px solid rgba(180, 123, 157, .35);
+      border-radius: 26px;
+      background: rgba(255, 250, 253, .73);
+      box-shadow:
+        0 12px 35px rgba(157, 105, 144, .10),
+        inset 0 0 0 5px rgba(255, 255, 255, .40);
+      backdrop-filter: blur(8px);
+    }
 
-.helper {
-  text-align: center;
-  font-size: 16px;
-  font-style: italic;
-  line-height: 1.5;
-  margin: 6px 0 17px;
-}
+    .section-heading {
+      margin: 0;
+      text-align: center;
+      color: var(--deep-rose);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .23em;
+      line-height: 1.8;
+      text-transform: uppercase;
+    }
 
-.preview {
-  width: 100%;
-  aspect-ratio: 1;
-  overflow: hidden;
-  border: 1px solid #e8ccdc;
-  border-radius: 15px;
-  background-color: #f4e5ed;
-  background-image:
-    linear-gradient(45deg,#ead9e4 25%,transparent 25%),
-    linear-gradient(-45deg,#ead9e4 25%,transparent 25%),
-    linear-gradient(45deg,transparent 75%,#ead9e4 75%),
-    linear-gradient(-45deg,transparent 75%,#ead9e4 75%);
-  background-size: 18px 18px;
-  background-position: 0 0,0 9px,9px -9px,-9px 0;
-}
+    .section-title {
+      margin: 6px 0 10px;
+      text-align: center;
+      color: var(--rose);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(24px, 5vw, 31px);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.4;
+    }
 
-canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-  touch-action: none;
-}
+    .section-description {
+      max-width: 600px;
+      margin: 0 auto 24px;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.65;
+    }
 
-label {
-  display: block;
-  font-size: 17px;
-  margin: 17px 0 7px;
-}
+    .canvas-wrap {
+      width: min(100%, 540px);
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(180, 123, 157, .3);
+      border-radius: 16px;
+      background: #fff8fc;
+      box-shadow: 0 7px 22px rgba(150, 97, 136, .12);
+    }
 
-input[type="file"] {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  font: 14px Arial, sans-serif;
-  color: var(--plum);
-}
+    #preview {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      touch-action: none;
+      cursor: grab;
+    }
 
-input[type="range"] {
-  width: 100%;
-  accent-color: #b77fa1;
-}
+    #preview:active {
+      cursor: grabbing;
+    }
 
-button {
-  display: block;
-  width: 100%;
-  padding: 13px 15px;
-  margin-top: 12px;
-  border-radius: 30px;
-  font: 17px 'Cormorant Garamond', serif;
-  cursor: pointer;
-}
+    .instructions {
+      margin: 13px 0 22px;
+      text-align: center;
+      color: #9c7a97;
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1.5;
+    }
 
-.primary {
-  color: white;
-  border: 1px solid #bd89a8;
-  background: linear-gradient(120deg,#c28eaa,#a18abb);
-  box-shadow: 0 5px 14px #b78baa30;
-}
+    .controls {
+      display: grid;
+      gap: 16px;
+      width: min(100%, 540px);
+      margin: 0 auto;
+    }
 
-.secondary {
-  color: #956c89;
-  border: 1px solid #dfbdd1;
-  background: #fff8fb;
-}
+    .upload-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border: 1px solid #c99ab9;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f8e6f1, #f0e6f8);
+      color: #875f82;
+      font-size: 17px;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
 
-.tiny-note {
-  text-align: center;
-  font-size: 14px;
-  font-style: italic;
-  line-height: 1.6;
-}
+    .upload-label:hover,
+    button:hover,
+    .wish-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(161, 103, 146, .16);
+    }
 
-.link {
-  color: #a66f91;
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-underline-offset: 3px;
-  overflow-wrap: anywhere;
-}
+    #photo {
+      display: none;
+    }
 
-.contact {
-  display: block;
-  padding: 10px;
-  margin: 9px 0;
-  border: 1px dashed #e1bed1;
-  border-radius: 14px;
-  background: #fff8fb;
-  text-align: center;
-  line-height: 1.6;
-  text-decoration: none;
-  color: #966987;
-}
+    .zoom-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 14px;
+      font-size: 17px;
+    }
 
-.wishes {
-  text-align: center;
-  line-height: 1.65;
-}
+    .zoom-row label {
+      white-space: nowrap;
+    }
 
-.credits {
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.8;
-}
+    input[type="range"] {
+      width: 100%;
+      accent-color: #b47b9d;
+      cursor: pointer;
+    }
 
-footer {
-  text-align: center;
-  font-size: 13px;
-  line-height: 1.8;
-  padding-top: 14px;
-}
+    .button-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
 
-@media (max-width: 380px) {
-  .page { padding-inline: 12px; }
-  .card { padding: 13px; }
-  .intro { font-size: 16px; }
-}
-</style>
+    button {
+      min-height: 46px;
+      padding: 11px 14px;
+      border: 1px solid #c99ab9;
+      border-radius: 999px;
+      background: rgba(255, 247, 252, .95);
+      color: #875f82;
+      font-family: inherit;
+      font-size: 17px;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    button.primary {
+      border-color: #b47b9d;
+      background: linear-gradient(135deg, #dcb4d0, #cbaedc);
+      color: #fffafd;
+    }
+
+    button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .wishes {
+      text-align: center;
+    }
+
+    .wish-links {
+      display: grid;
+      gap: 12px;
+      width: min(100%, 420px);
+      margin: 22px auto 0;
+    }
+
+    .wish-link {
+      display: block;
+      padding: 13px 18px;
+      border: 1px solid rgba(180, 123, 157, .4);
+      border-radius: 999px;
+      background: rgba(255, 247, 252, .86);
+      color: var(--deep-rose);
+      font-size: 18px;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .credits {
+      margin: 34px auto 0;
+      padding: 23px 12px 0;
+      border-top: 1px solid rgba(180, 123, 157, .28);
+      text-align: center;
+    }
+
+    .credits-title {
+      margin: 0 0 12px;
+      color: var(--deep-rose);
+      font-size: 12px;
+      letter-spacing: .2em;
+      line-height: 1.8;
+      text-transform: uppercase;
+    }
+
+    .credits p {
+      margin: 8px 0;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .credits a {
+      color: var(--deep-rose);
+      text-decoration: underline;
+      text-decoration-color: rgba(180, 123, 157, .5);
+      text-underline-offset: 3px;
+    }
+
+    .status {
+      min-height: 22px;
+      margin: 0;
+      text-align: center;
+      color: #9a7192;
+      font-size: 15px;
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        width: min(100% - 20px, 920px);
+        padding-top: 32px;
+      }
+
+      header {
+        padding-bottom: 16px;
+      }
+
+      .panel {
+        border-radius: 20px;
+        padding: 18px 14px;
+      }
+
+      .intro {
+        margin-top: 20px;
+      }
+
+      .button-row {
+        grid-template-columns: 1fr;
+      }
+
+      .zoom-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <main class="page">
 
-<div class="doodle-border">
-  ✧ 𓍢ִ໋🌷͙֒ ⋆｡°✩ ♡ ✧ ❀ ˚₊‧꒰ა ☆ ໒꒱ ‧₊˚ ✧
-</div>
+    <header>
+      <p class="eyebrow">A Sacred Jubilee Dreamscape</p>
+      <h1>Livia's Edenic Arbor</h1>
+      <p class="subtitle">a blooming tapestry of dreams &amp; enchantment</p>
 
-<main class="page">
+      <p class="intro">
+        frame your heart in this stardust vignette and join the whimsical
+        celebration under the spell of
+        <strong>#LiviaEdenic27!</strong> 🌸✨
+      </p>
+    </header>
 
-  <header>
-    <div class="eyebrow">✧ A SACRED JUBILEE DREAMSCAPE ✧</div>
-    <h1>Livia's Edenic Arbor</h1>
-    <p class="subtitle">a blooming tapestry of dreams & enchantment</p>
+    <section class="panel" aria-labelledby="maker-title">
+      <p class="section-heading">The Twibbon Atelier</p>
+      <h2 class="section-title" id="maker-title">A Little Portrait of Wonder</h2>
+      <p class="section-description">
+        Choose a photograph, arrange it to your liking, and keep a little
+        piece of this celebration with you.
+      </p>
 
-    <div class="ornament">୨୧ ˚₊‧ ✿ ‧₊˚ ♡ ˚₊‧ ✧ ‧₊˚ ୨୧</div>
+      <div class="canvas-wrap">
+        <canvas id="preview" width="800" height="800" aria-label="Twibbon preview"></canvas>
+      </div>
 
-    <p class="intro">
-      frame your heart in this stardust vignette and join the
-      whimsical celebration under the spell of
-      <strong>#LiviaEdenic27</strong>! 🌸✨
-    </p>
+      <p class="instructions">
+        upload a photograph, then drag it to adjust its position.
+      </p>
 
-    <div class="ornament">𓍢ִ໋🌷͙֒ ⋆｡°✩ ♡ ✩°｡⋆ 🌷͙֒𓍢ִ໋</div>
-  </header>
+      <div class="controls">
+        <label class="upload-label" for="photo">
+          Choose Your Photograph
+        </label>
+        <input id="photo" type="file" accept="image/*">
 
-  <section class="card">
-    <h2>✿ let's make a little magic! ✿</h2>
-    <p class="helper">
-      pick a portrait, sprinkle a little stardust,
-      and let the birthday daydream begin ♡
-    </p>
+        <div class="zoom-row">
+          <label for="zoom">Photograph scale</label>
+          <input id="zoom" type="range" min="0.5" max="3" value="1" step="0.01">
+        </div>
 
-    <div class="preview">
-      <canvas id="canvas" width="800" height="800"></canvas>
-    </div>
+        <div class="button-row">
+          <button id="reset" type="button">Reset Photograph</button>
+          <button id="download" class="primary" type="button" disabled>
+            Save My Twibbon
+          </button>
+        </div>
 
-    <label for="photo">♡ choose a photo</label>
-    <input id="photo" type="file" accept="image/*">
+        <p class="status" id="status" aria-live="polite">
+          Your little canvas is ready.
+        </p>
+      </div>
+    </section>
 
-    <label for="zoom">✧ adjust the photo size</label>
-    <input id="zoom" type="range" min="0.5" max="3" value="1" step="0.01">
+    <section class="panel wishes" aria-labelledby="wishes-title">
+      <p class="section-heading">The Roseate Missives</p>
+      <h2 class="section-title" id="wishes-title">
+        A Posy of Heartfelt Benedictions
+      </h2>
+      <p class="section-description">
+        A little repository of fond felicitations, petal-soft affections,
+        and starry-eyed well-wishes, lovingly bestowed upon Livia's most
+        wondrous natal jubilee.
+      </p>
 
-    <button class="secondary" id="reset">
-      ↺ start the little daydream anew
-    </button>
+      <div class="wish-links">
+        <a
+          class="wish-link"
+          href="https://t.me/ettourdearly"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Send Your Wishes to the Host · ettourdearly</a>
 
-    <button class="primary" id="download">
-      ✧ download my twibbon! ♡
-    </button>
+        <a
+          class="wish-link"
+          href="https://t.me/sylphidewaltz"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Visit the Celebration Channel · sylphidewaltz</a>
+      </div>
+    </section>
 
-    <p class="tiny-note">
-      a little nudge here, a little zoom there —
-      make yourself at home in the garden! ✿
-    </p>
-  </section>
+    <footer class="credits">
+      <p class="credits-title">A Proudly Whimsical Undertaking</p>
+      <p>
+        dreamt into being by
+        <a href="https://t.me/artlucas" target="_blank" rel="noopener noreferrer">@artlucas</a>
+      </p>
+      <p>
+        a collaborative confection by
+        <a href="https://t.me/trinketslab" target="_blank" rel="noopener noreferrer">@trinketslab</a>
+      </p>
+    </footer>
 
-  <div class="doodle-border">˚₊‧꒰ა ☆ ໒꒱ ‧₊˚ ♡ ˚₊‧ ✧ ‧₊˚</div>
+  </main>
 
-  <section class="card wishes">
-    <div class="eyebrow">✧ THE ROSEATE MISSIVES ✧</div>
+  <script>
+    const canvas = document.getElementById("preview");
+    const ctx = canvas.getContext("2d");
 
-    <h2>A Posy of Heartfelt Benedictions</h2>
+    const photoInput = document.getElementById("photo");
+    const zoomInput = document.getElementById("zoom");
+    const resetButton = document.getElementById("reset");
+    const downloadButton = document.getElementById("download");
+    const statusText = document.getElementById("status");
 
-    <p>
-      A little repository of fond felicitations, petal-soft
-      affections, and starry-eyed well-wishes, lovingly
-      bestowed upon Livia's most wondrous natal jubilee.
-    </p>
+    const frame = new Image();
+    frame.src = "./livia-frame.png";
 
-    <a class="contact" href="https://t.me/ettourdearly"
-       target="_blank" rel="noopener">
-      ✉ tender missives may be bestowed upon the host<br>
-      <strong>t.me/ettourdearly ↗</strong>
-    </a>
+    let photo = null;
+    let photoScale = 1;
+    let photoX = canvas.width / 2;
+    let photoY = canvas.height / 2;
+    let dragging = false;
+    let pointerStartX = 0;
+    let pointerStartY = 0;
+    let photoStartX = 0;
+    let photoStartY = 0;
 
-    <a class="contact" href="https://t.me/sylphidewaltz"
-       target="_blank" rel="noopener">
-      ❀ the sylvan chronicle of this little reverie<br>
-      <strong>t.me/sylphidewaltz ↗</strong>
-    </a>
-  </section>
+    function drawPlaceholder() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  <div class="doodle-border">✧･ﾟ: *✧･ﾟ:* ♡ *:･ﾟ✧*:･ﾟ✧</div>
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      gradient.addColorStop(0, "#f7e5f0");
+      gradient.addColorStop(1, "#eee4f5");
 
-  <section class="card credits">
-    <div class="eyebrow">✧ A PROUDLY WHIMSICAL UNDERTAKING ✧</div>
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    <p>
-      dreamt into being by
-      <a class="link" href="https://t.me/artlucas"
-         target="_blank" rel="noopener">@artlucas</a>
-    </p>
-
-    <p>
-      a collaborative confection by
-      <a class="link" href="https://t.me/trinketslab"
-         target="_blank" rel="noopener">@trinketslab</a>
-    </p>
-
-    <div class="ornament">❀ made of stardust, reveries & roseate dreams ❀</div>
-  </section>
-
-  <footer>
-    gathered with love, doodles & a pocketful of stardust ♡<br>
-    #LiviaEdenic27
-  </footer>
-
-</main>
-
-<div class="doodle-border">
-  ✿ ୨୧ ✧ ♡ ❀ ✧ ୨୧ ✿
-</div>
-
-<script>
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-const photoInput = document.getElementById('photo');
-const zoomInput = document.getElementById('zoom');
-
-let photo = null;
-let frame = null;
-let scale = 1;
-let x = 0;
-let y = 0;
-let dragging = false;
-let lastX = 0;
-let lastY = 0;
-
-function draw() {
-  const w = canvas.width;
-  const h = canvas.height;
-
-  ctx.clearRect(0, 0, w, h);
-
-  if (photo) {
-    const fit = Math.max(w / photo.width, h / photo.height);
-    const dw = photo.width * fit * scale;
-    const dh = photo.height * fit * scale;
-
-    ctx.drawImage(photo, (w - dw) / 2 + x, (h - dh) / 2 + y, dw, dh);
-  } else {
-    ctx.fillStyle = '#f5e8f0';
-    ctx.fillRect(0, 0, w, h);
-    ctx.textAlign = 'center';
-    ctx.fillStyle = '#ad83a0';
-    ctx.font = '34px Georgia';
-    ctx.fillText('✧ your photo goes here ✧', w / 2, h / 2 - 12);
-    ctx.font = '23px Georgia';
-    ctx.fillText('a little wish for Livia ♡', w / 2, h / 2 + 30);
-  }
-
-  if (frame) ctx.drawImage(frame, 0, 0, w, h);
-}
-
-const frameImage = new Image();
-
-frameImage.onload = () => {
-  frame = frameImage;
-  draw();
-};
-
-frameImage.onerror = () => {
-  console.error('Could not load livia-frame.png');
-};
-
-frameImage.src = './livia-frame.png';
-
-photoInput.addEventListener('change', event => {
-  const file = event.target.files[0];
-  if (!file) return;
-
-  const url = URL.createObjectURL(file);
-  const img = new Image();
-
-  img.onload = () => {
-    photo = img;
-    scale = 1;
-    x = 0;
-    y = 0;
-    zoomInput.value = 1;
-    draw();
-    URL.revokeObjectURL(url);
-  };
-
-  img.onerror = () => {
-    URL.revokeObjectURL(url);
-    alert('This photo could not be opened. Please choose another one ♡');
-  };
-
-  img.src = url;
-});
-
-zoomInput.addEventListener('input', () => {
-  scale = Number(zoomInput.value);
-  draw();
-});
-
-function getPoint(event) {
-  const rect = canvas.getBoundingClientRect();
-  return {
-    x: (event.clientX - rect.left) * canvas.width / rect.width,
-    y: (event.clientY - rect.top) * canvas.height / rect.height
-  };
-}
-
-canvas.addEventListener('pointerdown', event => {
-  if (!photo) return;
-  dragging = true;
-  canvas.setPointerCapture(event.pointerId);
-  const p = getPoint(event);
-  lastX = p.x;
-  lastY = p.y;
-});
-
-canvas.addEventListener('pointermove', event => {
-  if (!dragging) return;
-  const p = getPoint(event);
-  x += p.x - lastX;
-  y += p.y - lastY;
-  lastX = p.x;
-  lastY = p.y;
-  draw();
-});
-
-canvas.addEventListener('pointerup', () => dragging = false);
-canvas.addEventListener('pointercancel', () => dragging = false);
-
-document.getElementById('reset').addEventListener('click', () => {
-  scale = 1;
-  x = 0;
-  y = 0;
-  zoomInput.value = 1;
-  draw();
-});
-
-document.getElementById('download').addEventListener('click', () => {
-  if (!photo) {
-    alert('Choose a photo first, little daydreamer! ♡');
-    return;
-  }
-
-  if (!frame) {
-    alert('The garden frame is still loading. Please refresh and try again ♡');
-    return;
-  }
-
-  canvas.toBlob(blob => {
-    if (!blob) {
-      alert('The image could not be created. Please try again.');
-      return;
+      ctx.fillStyle = "#a97c9f";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.font = "italic 28px Georgia";
+      ctx.fillText("your photograph goes here", canvas.width / 2, canvas.height / 2);
     }
 
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'Livia-Edenic-27.png';
-    link.click();
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-  }, 'image/png');
-});
+      if (photo && photo.complete) {
+        const baseScale = Math.max(
+          canvas.width / photo.width,
+          canvas.height / photo.height
+        );
 
-draw();
-</script>
+        const finalScale = baseScale * photoScale;
+        const drawWidth = photo.width * finalScale;
+        const drawHeight = photo.height * finalScale;
+
+        ctx.drawImage(
+          photo,
+          photoX - drawWidth / 2,
+          photoY - drawHeight / 2,
+          drawWidth,
+          drawHeight
+        );
+      } else {
+        drawPlaceholder();
+      }
+
+      if (frame.complete && frame.naturalWidth > 0) {
+        ctx.drawImage(frame, 0, 0, canvas.width, canvas.height);
+      }
+    }
+
+    frame.onload = () => {
+      draw();
+      statusText.textContent = "Your twibbon frame is ready.";
+    };
+
+    frame.onerror = () => {
+      draw();
+      statusText.textContent =
+        "The frame could not load. Check that livia-frame.png is in the repository.";
+    };
+
+    photoInput.addEventListener("change", (event) => {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith("image/")) {
+        statusText.textContent = "Please choose an image file.";
+        return;
+      }
+
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        const uploadedImage = new Image();
+
+        uploadedImage.onload = () => {
+          photo = uploadedImage;
+          photoScale = 1;
+          zoomInput.value = "1";
+          photoX = canvas.width / 2;
+          photoY = canvas.height / 2;
+          downloadButton.disabled = false;
+          statusText.textContent =
+            "Photograph added! Drag it around or adjust the scale.";
+          draw();
+        };
+
+        uploadedImage.onerror = () => {
+          statusText.textContent = "That photograph could not be opened. Try another image.";
+        };
+
+        uploadedImage.src = reader.result;
+      };
+
+      reader.readAsDataURL(file);
+    });
+
+    zoomInput.addEventListener("input", () => {
+      photoScale = Number(zoomInput.value);
+      draw();
+    });
+
+    resetButton.addEventListener("click", () => {
+      photoScale = 1;
+      zoomInput.value = "1";
+      photoX = canvas.width / 2;
+      photoY = canvas.height / 2;
+      draw();
+      statusText.textContent = photo
+        ? "Photograph position and scale have been reset."
+        : "Choose a photograph first to begin.";
+    });
+
+    function getCanvasPoint(event) {
+      const rect = canvas.getBoundingClientRect();
+
+      return {
+        x: (event.clientX - rect.left) * (canvas.width / rect.width),
+        y: (event.clientY - rect.top) * (canvas.height / rect.height)
+      };
+    }
+
+    canvas.addEventListener("pointerdown", (event) => {
+      if (!photo) return;
+
+      dragging = true;
+      canvas.setPointerCapture(event.pointerId);
+
+      const point = getCanvasPoint(event);
+      pointerStartX = point.x;
+      pointerStartY = point.y;
+      photoStartX = photoX;
+      photoStartY = photoY;
+    });
+
+    canvas.addEventListener("pointermove", (event) => {
+      if (!dragging) return;
+
+      const point = getCanvasPoint(event);
+
+      photoX = photoStartX + point.x - pointerStartX;
+      photoY = photoStartY + point.y - pointerStartY;
+
+      draw();
+    });
+
+    function stopDragging() {
+      dragging = false;
+    }
+
+    canvas.addEventListener("pointerup", stopDragging);
+    canvas.addEventListener("pointercancel", stopDragging);
+    canvas.addEventListener("lostpointercapture", stopDragging);
+
+    downloadButton.addEventListener("click", () => {
+      if (!photo) {
+        statusText.textContent = "Choose a photograph before saving your twibbon.";
+        return;
+      }
+
+      draw();
+
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          statusText.textContent = "The image could not be saved. Please try again.";
+          return;
+        }
+
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "livia-edenic-27-twibbon.png";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+
+        statusText.textContent = "Your twibbon has been saved. Enjoy the celebration!";
+      }, "image/png");
+    });
+
+    draw();
+  </script>
 </body>
 </html>
