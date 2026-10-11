@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5e8f2">
+  <meta name="theme-color" content="#f7edf5">
   <title>Livia's Edenic Arbor</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -17,6 +17,9 @@
       --deep-rose: #906487;
       --ink: #795777;
       --border: rgba(177, 126, 161, .35);
+      --panel: rgba(255, 249, 253, .84);
+      --handwritten: "Caveat", cursive;
+      --editorial: "Cormorant Garamond", serif;
     }
 
     * {
@@ -31,23 +34,23 @@
       margin: 0;
       min-height: 100vh;
       color: var(--ink);
-      font-family: "Cormorant Garamond", serif;
+      font-family: var(--editorial);
       background-color: #f7edf5;
       background-image:
         radial-gradient(
           ellipse at 12% 8%,
-          rgba(236, 195, 220, .75),
+          rgba(236, 195, 220, .78),
           transparent 42%
         ),
         radial-gradient(
           ellipse at 88% 28%,
-          rgba(213, 199, 235, .72),
+          rgba(213, 199, 235, .76),
           transparent 43%
         ),
         radial-gradient(
           ellipse at 45% 90%,
-          rgba(248, 215, 231, .7),
-          transparent 45%
+          rgba(248, 215, 231, .72),
+          transparent 46%
         ),
         linear-gradient(
           145deg,
@@ -62,22 +65,25 @@
     .page {
       width: min(100% - 24px, 760px);
       margin: 0 auto;
-      padding: 1px 0 28px;
+      padding: 1px 0 30px;
     }
 
+    /* Main heading */
+
     header {
-      padding: 0 10px 22px;
       margin-top: 54px;
+      padding: 0 12px 22px;
       text-align: center;
     }
 
     .eyebrow {
       margin: 0 0 12px;
       color: var(--deep-rose);
-      font-size: 11px;
-      letter-spacing: .22em;
-      line-height: 1.8;
-      text-transform: uppercase;
+      font-family: var(--handwritten);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      line-height: 1.5;
     }
 
     h1 {
@@ -102,7 +108,7 @@
     .intro {
       max-width: 570px;
       margin: 22px auto 0;
-      font-size: clamp(15px, 3vw, 18px);
+      font-size: clamp(16px, 3vw, 18px);
       line-height: 1.8;
     }
 
@@ -111,15 +117,18 @@
       font-weight: 600;
     }
 
+    /* Panels */
+
     .panel {
-      width: 100%;
-      margin: 17px auto 22px;
-      padding: clamp(17px, 3.5vw, 27px);
+      width: calc(100% - 36px);
+      max-width: 620px;
+      margin: 18px auto 24px;
+      padding: clamp(18px, 4vw, 28px);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      background: rgba(255, 249, 253, .80);
+      border-radius: 23px;
+      background: var(--panel);
       box-shadow:
-        0 8px 25px rgba(127, 83, 119, .09),
+        0 9px 28px rgba(127, 83, 119, .09),
         inset 0 0 0 3px rgba(255, 255, 255, .25);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
@@ -129,39 +138,42 @@
       margin: 0;
       color: var(--deep-rose);
       text-align: center;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: .2em;
-      line-height: 1.8;
-      text-transform: uppercase;
+      font-family: var(--handwritten);
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      line-height: 1.5;
     }
 
     .section-title {
-      margin: 5px 0 10px;
+      margin: 5px 0 11px;
       color: var(--rose);
       text-align: center;
       font-family: "Playfair Display", serif;
-      font-size: clamp(19px, 3.5vw, 25px);
+      font-size: clamp(20px, 4vw, 26px);
       font-weight: 400;
       font-style: italic;
       line-height: 1.45;
     }
 
     .section-description {
-      max-width: 540px;
-      margin: 0 auto 22px;
+      max-width: 500px;
+      margin: 0 auto 23px;
       text-align: center;
       font-size: 16px;
       line-height: 1.8;
     }
 
+    /* Twibbon preview */
+
     .canvas-wrap {
-      width: min(100%, 480px);
+      width: 100%;
+      max-width: 480px;
       margin: 0 auto;
       overflow: hidden;
       border: 1px solid var(--border);
-      border-radius: 13px;
-      background: #fff8fc;
+      border-radius: 14px;
+      background: #f3e8f5;
       box-shadow: 0 7px 22px rgba(150, 97, 136, .10);
     }
 
@@ -179,18 +191,22 @@
     }
 
     .instructions {
-      margin: 12px 0 20px;
+      margin: 13px 0 20px;
       color: #947590;
       text-align: center;
-      font-size: 15px;
-      font-style: italic;
-      line-height: 1.6;
+      font-family: var(--handwritten);
+      font-size: 21px;
+      font-weight: 500;
+      line-height: 1.45;
     }
+
+    /* Upload and controls */
 
     .controls {
       display: grid;
       gap: 15px;
-      width: min(100%, 480px);
+      width: 100%;
+      max-width: 480px;
       margin: 0 auto;
     }
 
@@ -198,13 +214,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 45px;
-      padding: 11px 17px;
+      min-height: 47px;
+      padding: 10px 16px;
       border: 1px solid #c99ab9;
       border-radius: 999px;
       background: rgba(248, 230, 241, .95);
       color: #875f82;
-      font-size: 16px;
+      font-family: var(--handwritten);
+      font-size: 23px;
+      font-weight: 600;
       text-align: center;
       cursor: pointer;
       transition: background .2s, transform .2s;
@@ -221,15 +239,28 @@
 
     .zoom-row {
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: 1fr;
+      gap: 5px;
+      color: #987196;
+      font-family: var(--handwritten);
+      font-size: 21px;
+      font-weight: 500;
+    }
+
+    .zoom-heading {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 14px;
-      font-size: 16px;
+      gap: 10px;
+    }
+
+    #zoomValue {
+      color: #987196;
     }
 
     input[type="range"] {
       width: 100%;
-      accent-color: #b47b9d;
+      accent-color: #d28eae;
       cursor: pointer;
     }
 
@@ -237,17 +268,20 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
+      margin-top: 2px;
     }
 
     button {
-      min-height: 44px;
-      padding: 10px 12px;
+      min-height: 52px;
+      padding: 10px;
       border: 1px solid #c99ab9;
-      border-radius: 999px;
+      border-radius: 16px;
       background: rgba(255, 247, 252, .96);
       color: #875f82;
-      font-family: inherit;
-      font-size: 16px;
+      font-family: var(--handwritten);
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 1.2;
       cursor: pointer;
       transition: background .2s, transform .2s;
     }
@@ -258,13 +292,13 @@
     }
 
     button.primary {
-      border-color: #b47b9d;
+      border-color: #c99ab9;
       background: linear-gradient(135deg, #dcb4d0, #cbaedc);
       color: #fffafd;
     }
 
     button:disabled {
-      opacity: .5;
+      opacity: .55;
       cursor: not-allowed;
       transform: none;
     }
@@ -274,14 +308,19 @@
       margin: 0;
       color: #947590;
       text-align: center;
-      font-size: 14px;
-      line-height: 1.6;
+      font-family: var(--handwritten);
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.4;
     }
+
+    /* Wishes */
 
     .wish-links {
       display: grid;
       gap: 10px;
-      width: min(100%, 390px);
+      width: 100%;
+      max-width: 390px;
       margin: 18px auto 0;
     }
 
@@ -292,8 +331,10 @@
       border-radius: 999px;
       background: rgba(255, 248, 252, .92);
       color: var(--deep-rose);
-      font-size: 16px;
-      line-height: 1.5;
+      font-family: var(--handwritten);
+      font-size: 21px;
+      font-weight: 500;
+      line-height: 1.4;
       text-align: center;
       text-decoration: none;
       transition: background .2s, transform .2s;
@@ -304,9 +345,13 @@
       transform: translateY(-1px);
     }
 
+    /* Credits */
+
     .credits {
-      margin: 25px auto 0;
-      padding: 22px 12px 0;
+      width: calc(100% - 36px);
+      max-width: 620px;
+      margin: 26px auto 0;
+      padding: 22px 12px 10px;
       border-top: 1px solid var(--border);
       text-align: center;
     }
@@ -314,15 +359,15 @@
     .credits-title {
       margin: 0 0 10px;
       color: var(--deep-rose);
-      font-size: 11px;
-      letter-spacing: .19em;
-      line-height: 1.8;
-      text-transform: uppercase;
+      font-family: var(--handwritten);
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 1.4;
     }
 
     .credits p {
       margin: 7px 0;
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.7;
     }
 
@@ -333,19 +378,21 @@
       text-underline-offset: 3px;
     }
 
+    /* Mobile layout */
+
     @media (max-width: 520px) {
       body {
         background-attachment: scroll;
       }
 
       .page {
-        width: calc(100% - 22px);
+        width: 100%;
         padding-top: 1px;
       }
 
       header {
-        margin-top: 42px;
-        padding-bottom: 19px;
+        margin-top: 44px;
+        padding: 0 23px 20px;
       }
 
       h1 {
@@ -353,23 +400,60 @@
       }
 
       .panel {
-        padding: 18px 14px;
-        border-radius: 17px;
-        margin-top: 15px;
-        margin-bottom: 18px;
+        width: calc(100% - 44px);
+        padding: 19px 14px;
+        margin-top: 16px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+      }
+
+      .section-heading {
+        font-size: 19px;
+      }
+
+      .section-description {
+        font-size: 16px;
+      }
+
+      .instructions {
+        font-size: 20px;
+      }
+
+      .upload-label {
+        font-size: 22px;
+      }
+
+      .zoom-row {
+        font-size: 20px;
+      }
+
+      button {
+        min-height: 54px;
+        padding: 9px 7px;
+        font-size: 20px;
+      }
+
+      .wish-link {
+        font-size: 20px;
+      }
+
+      .credits {
+        width: calc(100% - 44px);
+      }
+    }
+
+    @media (max-width: 360px) {
+      .panel {
+        width: calc(100% - 30px);
+        padding: 17px 12px;
       }
 
       .button-row {
         grid-template-columns: 1fr;
       }
 
-      .zoom-row {
-        grid-template-columns: 1fr;
-        gap: 7px;
-      }
-
       .credits {
-        margin-top: 24px;
+        width: calc(100% - 30px);
       }
     }
   </style>
@@ -380,27 +464,38 @@
 
     <header>
       <p class="eyebrow">A Sacred Jubilee Dreamscape</p>
-      <h1>'s Edenic Arbor</h1>
-      <p class="subtitle">a blooming tapestry of dreams &amp; enchantment</p>
+      <h1>Livia's Edenic Arbor</h1>
+
+      <p class="subtitle">
+        a blooming tapestry of dreams &amp; enchantment
+      </p>
 
       <p class="intro">
         frame your heart in this stardust vignette and join the whimsical
         celebration under the spell of
-        <strong>#Edenic27!</strong> 
+        <strong>#LiviaEdenic27!</strong> 🌸✨
       </p>
     </header>
 
     <section class="panel" aria-labelledby="maker-title">
       <p class="section-heading">The Twibbon Atelier</p>
-      <h2 class="section-title" id="maker-title">A Little Portrait of Wonder</h2>
+
+      <h2 class="section-title" id="maker-title">
+        A Little Portrait of Wonder
+      </h2>
+
       <p class="section-description">
         Choose a photograph, arrange it to your liking, and keep a little
         piece of this celebration with you.
       </p>
 
       <div class="canvas-wrap">
-        <canvas id="preview" width="800" height="800"
-          aria-label="Twibbon preview"></canvas>
+        <canvas
+          id="preview"
+          width="800"
+          height="800"
+          aria-label="Twibbon preview"
+        ></canvas>
       </div>
 
       <p class="instructions">
@@ -409,66 +504,94 @@
 
       <div class="controls">
         <label class="upload-label" for="photo">
-          Choose Your Photograph
+          ♡ Choose Your Photograph ♡
         </label>
+
         <input id="photo" type="file" accept="image/*">
 
         <div class="zoom-row">
-          <label for="zoom">Photograph scale</label>
-          <input id="zoom" type="range" min="0.5" max="3"
-            value="1" step="0.01">
+          <div class="zoom-heading">
+            <label for="zoom">little zoom adjustment</label>
+            <span id="zoomValue">100%</span>
+          </div>
+
+          <input
+            id="zoom"
+            type="range"
+            min="0.5"
+            max="3"
+            value="1"
+            step="0.01"
+          >
         </div>
 
         <div class="button-row">
-          <button id="reset" type="button">Reset Photograph</button>
+          <button id="reset" type="button">
+            ↶ Reset Position
+          </button>
+
           <button id="download" class="primary" type="button" disabled>
-            Save My Twibbon
+            ♡ Save My Twibbon
           </button>
         </div>
 
         <p class="status" id="status" aria-live="polite">
-          Your little canvas is ready.
+          your little canvas is ready!
         </p>
       </div>
     </section>
 
     <section class="panel" aria-labelledby="wishes-title">
       <p class="section-heading">The Roseate Missives</p>
+
       <h2 class="section-title" id="wishes-title">
         A Posy of Heartfelt Benedictions
       </h2>
+
       <p class="section-description">
         A little repository of fond felicitations, petal-soft affections,
-        and starry-eyed well-wishes, lovingly bestowed upon 's most
+        and starry-eyed well-wishes, lovingly bestowed upon Livia's most
         wondrous natal jubilee.
       </p>
 
       <div class="wish-links">
-        <a class="wish-link"
+        <a
+          class="wish-link"
           href="https://t.me/ettourdearly"
-          target="_blank" rel="noopener noreferrer">
-          Send Your Wishes to the Host · ettourdearly
-        </a>
+          target="_blank"
+          rel="noopener noreferrer"
+        >ettourdearly ♡</a>
 
-        <a class="wish-link"
+        <a
+          class="wish-link"
           href="https://t.me/sylphidewaltz"
-          target="_blank" rel="noopener noreferrer">
-          Visit the Celebration Channel · sylphidewaltz
-        </a>
+          target="_blank"
+          rel="noopener noreferrer"
+        >sylphidewaltz ♡</a>
       </div>
     </section>
 
     <footer class="credits">
-      <p class="credits-title">A Proudly Whimsical Undertaking</p>
+      <p class="credits-title">
+        A Proudly Whimsical Undertaking
+      </p>
+
       <p>
         dreamt into being by
-        <a href="https://t.me/artlucas"
-          target="_blank" rel="noopener noreferrer">@artlucas</a>
+        <a
+          href="https://t.me/artlucas"
+          target="_blank"
+          rel="noopener noreferrer"
+        >@artlucas</a>
       </p>
+
       <p>
         a collaborative confection by
-        <a href="https://t.me/trinketslab"
-          target="_blank" rel="noopener noreferrer">@trinketslab</a>
+        <a
+          href="https://t.me/trinketslab"
+          target="_blank"
+          rel="noopener noreferrer"
+        >@trinketslab</a>
       </p>
     </footer>
 
@@ -477,31 +600,24 @@
   <script>
     const canvas = document.getElementById("preview");
     const ctx = canvas.getContext("2d");
+
     const photoInput = document.getElementById("photo");
     const zoomInput = document.getElementById("zoom");
+    const zoomValue = document.getElementById("zoomValue");
     const resetButton = document.getElementById("reset");
     const downloadButton = document.getElementById("download");
     const statusText = document.getElementById("status");
 
-    // Frame filename: livia-frame.png
+    // Frame filename must be livia-frame.png
+    // Place it in the same folder as index.html.
     const frame = new Image();
-    frame.onload = () => {
-      draw();
-      statusText.textContent = "Your twibbon frame is ready.";
-    };
 
-    frame.onerror = () => {
-      draw();
-      statusText.textContent =
-        "Frame not found. Check the exact filename and extension in your GitHub repository.";
-    };
-
-    frame.src = "./livia%20frame.png";
-
+    let frameLoaded = false;
     let photo = null;
     let photoScale = 1;
     let photoX = 400;
     let photoY = 400;
+
     let dragging = false;
     let pointerStartX = 0;
     let pointerStartY = 0;
@@ -510,47 +626,77 @@
 
     function drawPlaceholder() {
       const gradient = ctx.createLinearGradient(0, 0, 800, 800);
+
       gradient.addColorStop(0, "#f7e5f0");
       gradient.addColorStop(1, "#eee4f5");
+
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, 800, 800);
+
+      if (!frameLoaded) {
+        ctx.fillStyle = "#906487";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.font = "24px Georgia";
+        ctx.fillText("Loading your little frame...", 400, 400);
+      }
     }
 
     function draw() {
       ctx.clearRect(0, 0, 800, 800);
 
-      if (photo && photo.complete) {
+      if (photo && photo.complete && photo.naturalWidth > 0) {
         const baseScale = Math.max(
           800 / photo.width,
           800 / photo.height
         );
 
         const scale = baseScale * photoScale;
-        const w = photo.width * scale;
-        const h = photo.height * scale;
+        const width = photo.width * scale;
+        const height = photo.height * scale;
 
         ctx.drawImage(
           photo,
-          photoX - w / 2,
-          photoY - h / 2,
-          w,
-          h
+          photoX - width / 2,
+          photoY - height / 2,
+          width,
+          height
         );
       } else {
         drawPlaceholder();
       }
 
-      if (frame.complete && frame.naturalWidth > 0) {
+      if (frameLoaded) {
         ctx.drawImage(frame, 0, 0, 800, 800);
       }
     }
 
+    frame.onload = () => {
+      frameLoaded = true;
+      draw();
+
+      statusText.textContent = photo
+        ? "your twibbon frame is ready!"
+        : "frame is ready! choose your photograph ♡";
+    };
+
+    frame.onerror = () => {
+      frameLoaded = false;
+      draw();
+
+      statusText.textContent =
+        "frame not found — check livia-frame.png in your repository.";
+    };
+
+    frame.src = "./livia-frame.png";
+
     photoInput.addEventListener("change", (event) => {
       const file = event.target.files && event.target.files[0];
+
       if (!file) return;
 
       if (!file.type.startsWith("image/")) {
-        statusText.textContent = "Please choose an image file.";
+        statusText.textContent = "please choose an image file ♡";
         return;
       }
 
@@ -563,19 +709,29 @@
           photo = uploaded;
           photoScale = 1;
           zoomInput.value = "1";
+          zoomValue.textContent = "100%";
           photoX = 400;
           photoY = 400;
+
           downloadButton.disabled = false;
+
           statusText.textContent =
-            "Photograph added! Drag it around or adjust the scale.";
+            "lovely! drag your photo or adjust the zoom ♡";
+
           draw();
         };
 
         uploaded.onerror = () => {
-          statusText.textContent = "That photograph could not be opened.";
+          statusText.textContent =
+            "couldn't open that photograph — try another one!";
         };
 
         uploaded.src = reader.result;
+      };
+
+      reader.onerror = () => {
+        statusText.textContent =
+          "couldn't read the photograph — please try again ♡";
       };
 
       reader.readAsDataURL(file);
@@ -583,19 +739,22 @@
 
     zoomInput.addEventListener("input", () => {
       photoScale = Number(zoomInput.value);
+      zoomValue.textContent = Math.round(photoScale * 100) + "%";
       draw();
     });
 
     resetButton.addEventListener("click", () => {
       photoScale = 1;
       zoomInput.value = "1";
+      zoomValue.textContent = "100%";
       photoX = 400;
       photoY = 400;
+
       draw();
 
       statusText.textContent = photo
-        ? "Photograph position and scale have been reset."
-        : "Choose a photograph first to begin.";
+        ? "photo position and zoom reset — all fresh!"
+        : "choose a photograph first to begin ♡";
     });
 
     function getCanvasPoint(event) {
@@ -614,6 +773,7 @@
       canvas.setPointerCapture(event.pointerId);
 
       const point = getCanvasPoint(event);
+
       pointerStartX = point.x;
       pointerStartY = point.y;
       photoStartX = photoX;
@@ -621,11 +781,13 @@
     });
 
     canvas.addEventListener("pointermove", (event) => {
-      if (!dragging) return;
+      if (!dragging || !photo) return;
 
       const point = getCanvasPoint(event);
+
       photoX = photoStartX + point.x - pointerStartX;
       photoY = photoStartY + point.y - pointerStartY;
+
       draw();
     });
 
@@ -639,7 +801,14 @@
 
     downloadButton.addEventListener("click", () => {
       if (!photo) {
-        statusText.textContent = "Choose a photograph before saving.";
+        statusText.textContent =
+          "choose your photograph before saving ♡";
+        return;
+      }
+
+      if (!frameLoaded) {
+        statusText.textContent =
+          "the frame hasn't loaded yet — refresh and try again.";
         return;
       }
 
@@ -648,21 +817,24 @@
       canvas.toBlob((blob) => {
         if (!blob) {
           statusText.textContent =
-            "The image could not be saved. Please try again.";
+            "couldn't save the image — please try again!";
           return;
         }
 
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
+
         link.href = url;
         link.download = "liviaedenic27.png";
+
         document.body.appendChild(link);
         link.click();
         link.remove();
 
         setTimeout(() => URL.revokeObjectURL(url), 1000);
+
         statusText.textContent =
-          "Your twibbon has been saved as liviaedenic27.png.";
+          "saved! your file is liviaedenic27.png ♡";
       }, "image/png");
     });
 
