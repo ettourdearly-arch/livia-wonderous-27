@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,27 +35,10 @@
       font-family: "Cormorant Garamond", serif;
       background-color: #f7edf5;
       background-image:
-        radial-gradient(
-          ellipse at 12% 8%,
-          rgba(236, 195, 220, .78),
-          transparent 42%
-        ),
-        radial-gradient(
-          ellipse at 88% 28%,
-          rgba(213, 199, 235, .76),
-          transparent 43%
-        ),
-        radial-gradient(
-          ellipse at 45% 90%,
-          rgba(248, 215, 231, .72),
-          transparent 46%
-        ),
-        linear-gradient(
-          145deg,
-          #f8eaf3 0%,
-          #f3e8f5 48%,
-          #fdf0f6 100%
-        );
+        radial-gradient(ellipse at 12% 8%, rgba(236,195,220,.78), transparent 42%),
+        radial-gradient(ellipse at 88% 28%, rgba(213,199,235,.76), transparent 43%),
+        radial-gradient(ellipse at 45% 90%, rgba(248,215,231,.72), transparent 46%),
+        linear-gradient(145deg, #f8eaf3, #f3e8f5 48%, #fdf0f6);
       background-attachment: fixed;
       overflow-x: hidden;
     }
@@ -65,8 +49,6 @@
       padding: 1px 0 30px;
     }
 
-    /* Header */
-
     header {
       margin-top: 54px;
       padding: 0 12px 22px;
@@ -76,7 +58,6 @@
     .eyebrow {
       margin: 0 0 10px;
       color: var(--deep-rose);
-      font-family: "Cormorant Garamond", serif;
       font-size: 13px;
       font-weight: 500;
       letter-spacing: .18em;
@@ -91,7 +72,7 @@
       font-size: clamp(46px, 9vw, 78px);
       font-weight: 400;
       line-height: 1.2;
-      text-shadow: 1px 2px rgba(255, 255, 255, .85);
+      text-shadow: 1px 2px rgba(255,255,255,.85);
     }
 
     .subtitle {
@@ -115,8 +96,6 @@
       font-weight: 600;
     }
 
-    /* Panels */
-
     .panel {
       width: calc(100% - 36px);
       max-width: 620px;
@@ -125,9 +104,8 @@
       border: 1px solid var(--border);
       border-radius: 22px;
       background: var(--panel);
-      box-shadow:
-        0 9px 27px rgba(127, 83, 119, .09),
-        inset 0 0 0 3px rgba(255, 255, 255, .25);
+      box-shadow: 0 9px 27px rgba(127,83,119,.09),
+                  inset 0 0 0 3px rgba(255,255,255,.25);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
     }
@@ -136,7 +114,6 @@
       margin: 0;
       color: var(--deep-rose);
       text-align: center;
-      font-family: "Cormorant Garamond", serif;
       font-size: 13px;
       font-weight: 500;
       letter-spacing: .19em;
@@ -163,8 +140,6 @@
       line-height: 1.8;
     }
 
-    /* Twibbon preview */
-
     .canvas-wrap {
       width: 100%;
       max-width: 480px;
@@ -173,7 +148,7 @@
       border: 1px solid var(--border);
       border-radius: 14px;
       background: #f3e8f5;
-      box-shadow: 0 6px 20px rgba(150, 97, 136, .10);
+      box-shadow: 0 6px 20px rgba(150,97,136,.10);
     }
 
     #preview {
@@ -193,13 +168,10 @@
       margin: 13px 0 19px;
       color: #947590;
       text-align: center;
-      font-family: "Cormorant Garamond", serif;
       font-size: 16px;
       font-style: italic;
       line-height: 1.65;
     }
-
-    /* Upload and controls */
 
     .controls {
       display: grid;
@@ -217,9 +189,8 @@
       padding: 10px 15px;
       border: 1px solid #c99ab9;
       border-radius: 999px;
-      background: rgba(248, 230, 241, .95);
+      background: rgba(248,230,241,.95);
       color: #875f82;
-      font-family: "Cormorant Garamond", serif;
       font-size: 16px;
       font-weight: 600;
       text-align: center;
@@ -241,7 +212,6 @@
       grid-template-columns: 1fr;
       gap: 5px;
       color: #987196;
-      font-family: "Cormorant Garamond", serif;
       font-size: 16px;
     }
 
@@ -274,7 +244,7 @@
       padding: 9px 10px;
       border: 1px solid #c99ab9;
       border-radius: 14px;
-      background: rgba(255, 247, 252, .96);
+      background: rgba(255,247,252,.96);
       color: #875f82;
       font-family: "Cormorant Garamond", serif;
       font-size: 16px;
@@ -306,10 +276,10 @@
       margin: 0;
       color: #947590;
       text-align: center;
-      font-family: "Cormorant Garamond", serif;
       font-size: 14px;
       font-style: italic;
-      line-height: 1.5;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
     }
 
     .status a {
@@ -317,8 +287,6 @@
       text-decoration: underline;
       text-underline-offset: 3px;
     }
-
-    /* Related links */
 
     .wish-links {
       display: grid;
@@ -336,7 +304,7 @@
       padding: 13px 15px;
       border: 1px solid var(--border);
       border-radius: 14px;
-      background: rgba(255, 248, 252, .92);
+      background: rgba(255,248,252,.92);
       color: var(--deep-rose);
       text-decoration: none;
       transition: background .2s, transform .2s;
@@ -361,7 +329,6 @@
 
     .wish-link-caption {
       color: #a1829a;
-      font-family: "Cormorant Garamond", serif;
       font-size: 13px;
       font-style: italic;
       line-height: 1.4;
@@ -372,8 +339,6 @@
       color: #b4a44f;
       font-size: 19px;
     }
-
-    /* Credits */
 
     .credits {
       width: calc(100% - 36px);
@@ -387,7 +352,6 @@
     .credits-title {
       margin: 0 0 10px;
       color: var(--deep-rose);
-      font-family: "Cormorant Garamond", serif;
       font-size: 13px;
       font-weight: 500;
       letter-spacing: .16em;
@@ -404,11 +368,9 @@
     .credits a {
       color: var(--deep-rose);
       text-decoration: underline;
-      text-decoration-color: rgba(180, 123, 157, .5);
+      text-decoration-color: rgba(180,123,157,.5);
       text-underline-offset: 3px;
     }
-
-    /* Mobile layout */
 
     @media (max-width: 520px) {
       body {
@@ -515,7 +477,6 @@
 
     <header>
       <p class="eyebrow">A Sacred Jubilee Dreamscape</p>
-
       <h1>Livia's Edenic Arbor</h1>
 
       <p class="subtitle">
@@ -528,8 +489,6 @@
         <strong>#LiviaEdenic27!</strong>
       </p>
     </header>
-
-    <!-- Twibbon atelier -->
 
     <section class="panel" aria-labelledby="maker-title">
       <p class="section-heading">The Twibbon Atelier</p>
@@ -544,12 +503,8 @@
       </p>
 
       <div class="canvas-wrap">
-        <canvas
-          id="preview"
-          width="800"
-          height="800"
-          aria-label="Twibbon preview"
-        ></canvas>
+        <canvas id="preview" width="800" height="800"
+          aria-label="Twibbon preview"></canvas>
       </div>
 
       <p class="instructions">
@@ -569,21 +524,12 @@
             <span id="zoomValue">100%</span>
           </div>
 
-          <input
-            id="zoom"
-            type="range"
-            min="0.5"
-            max="3"
-            value="1"
-            step="0.01"
-          >
+          <input id="zoom" type="range" min="0.5" max="3"
+            value="1" step="0.01">
         </div>
 
         <div class="button-row">
-          <button id="reset" type="button">
-            ↶ reset position
-          </button>
-
+          <button id="reset" type="button">↶ reset position</button>
           <button id="download" class="primary" type="button" disabled>
             ⤓ download HD
           </button>
@@ -594,8 +540,6 @@
         </p>
       </div>
     </section>
-
-    <!-- Wishes and related links -->
 
     <section class="panel" aria-labelledby="wishes-title">
       <p class="section-heading">The Roseate Missives</p>
@@ -611,12 +555,8 @@
       </p>
 
       <div class="wish-links">
-        <a
-          class="wish-link"
-          href="https://t.me/ettourdearly"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="wish-link" href="https://t.me/ettourdearly"
+          target="_blank" rel="noopener noreferrer">
           <span class="wish-link-text">
             <span class="wish-link-title">Charmaine Fernsby</span>
             <span class="wish-link-caption">click to visit the host's account.</span>
@@ -624,12 +564,8 @@
           <span class="wish-link-icon" aria-hidden="true">↗</span>
         </a>
 
-        <a
-          class="wish-link"
-          href="https://t.me/sylphidewaltz"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="wish-link" href="https://t.me/sylphidewaltz"
+          target="_blank" rel="noopener noreferrer">
           <span class="wish-link-text">
             <span class="wish-link-title">Aureate Threnody</span>
             <span class="wish-link-caption">click to visit the celebration channel.</span>
@@ -639,29 +575,19 @@
       </div>
     </section>
 
-    <!-- Credits -->
-
     <footer class="credits">
-      <p class="credits-title">
-        A Proudly Whimsical Undertaking
-      </p>
+      <p class="credits-title">A Proudly Whimsical Undertaking</p>
 
       <p>
         dreamt into being by
-        <a
-          href="https://t.me/artlucas"
-          target="_blank"
-          rel="noopener noreferrer"
-        >@artlucas</a>
+        <a href="https://t.me/artlucas" target="_blank"
+          rel="noopener noreferrer">@artlucas</a>
       </p>
 
       <p>
         a collaborative confection by
-        <a
-          href="https://t.me/trinketslab"
-          target="_blank"
-          rel="noopener noreferrer"
-        >@trinketslab</a>
+        <a href="https://t.me/trinketslab" target="_blank"
+          rel="noopener noreferrer">@trinketslab</a>
       </p>
     </footer>
 
@@ -678,7 +604,7 @@
     const downloadButton = document.getElementById("download");
     const statusText = document.getElementById("status");
 
-    // Make sure livia-frame.png is in the same folder as index.html.
+    // livia-frame.png must be beside index.html.
     const frame = new Image();
 
     let frameLoaded = false;
@@ -695,10 +621,8 @@
 
     function drawPlaceholder() {
       const gradient = ctx.createLinearGradient(0, 0, 800, 800);
-
       gradient.addColorStop(0, "#f7e5f0");
       gradient.addColorStop(1, "#eee4f5");
-
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, 800, 800);
     }
@@ -727,7 +651,6 @@
         drawPlaceholder();
       }
 
-      // Keep the decorative frame above the user's photograph.
       if (frameLoaded) {
         ctx.drawImage(frame, 0, 0, 800, 800);
       }
@@ -736,7 +659,6 @@
     frame.onload = () => {
       frameLoaded = true;
       draw();
-
       statusText.textContent =
         "frame is ready! choose your photograph ♡";
     };
@@ -744,7 +666,6 @@
     frame.onerror = () => {
       frameLoaded = false;
       draw();
-
       statusText.textContent =
         "frame not found — check livia-frame.png in your repository.";
     };
@@ -774,7 +695,6 @@
           photoY = 400;
 
           downloadButton.disabled = false;
-
           statusText.textContent =
             "lovely! drag your photograph or adjust the zoom ♡";
 
@@ -809,7 +729,6 @@
       zoomValue.textContent = "100%";
       photoX = 400;
       photoY = 400;
-
       draw();
 
       statusText.textContent = photo
@@ -833,7 +752,6 @@
       canvas.setPointerCapture(event.pointerId);
 
       const point = getCanvasPoint(event);
-
       pointerStartX = point.x;
       pointerStartY = point.y;
       photoStartX = photoX;
@@ -844,10 +762,8 @@
       if (!dragging || !photo) return;
 
       const point = getCanvasPoint(event);
-
       photoX = photoStartX + point.x - pointerStartX;
       photoY = photoStartY + point.y - pointerStartY;
-
       draw();
     });
 
@@ -860,10 +776,10 @@
     canvas.addEventListener("lostpointercapture", stopDragging);
 
     /*
-      DOWNLOAD SYSTEM:
-      1. Try the device's native share menu when file sharing is supported.
-      2. If sharing is unavailable, try the regular download method.
-      3. Show a fallback link if the in-app browser only opens a preview.
+      DOWNLOAD:
+      Try native file sharing first.
+      If unavailable, show a page with the generated PNG.
+      On iPhone, press and hold the image to save it to Photos.
     */
 
     downloadButton.addEventListener("click", async () => {
@@ -880,19 +796,21 @@
       }
 
       draw();
+      statusText.textContent = "preparing your twibbon, please wait ♡";
 
       canvas.toBlob(async (blob) => {
-        if (!blob) {
+        if (!blob || blob.size === 0) {
           statusText.textContent =
-            "couldn't create your twibbon — please try again.";
+            "couldn't create the image — please try again.";
           return;
         }
 
-        const file = new File([blob], "liviaedenic27.png", {
+        const fileName = "liviaedenic27.png";
+        const file = new File([blob], fileName, {
           type: "image/png"
         });
 
-        // Try opening the native share menu on supported devices.
+        // Try the iPhone's native share menu.
         try {
           if (
             navigator.share &&
@@ -901,12 +819,11 @@
           ) {
             await navigator.share({
               files: [file],
-              title: "Livia's Edenic Arbor",
-              text: "My twibbon for #LiviaEdenic27 🌸"
+              title: "Livia's Edenic Arbor"
             });
 
             statusText.textContent =
-              "your twibbon is ready ♡ choose a place to save it if prompted.";
+              "your twibbon is ready ♡ choose where to save it.";
             return;
           }
         } catch (error) {
@@ -915,33 +832,106 @@
               "saving cancelled — you can try again ♡";
             return;
           }
-
-          // If sharing fails, continue to the regular download option.
         }
 
-        // Regular download fallback.
-        const url = URL.createObjectURL(blob);
+        // Convert the PNG into a data URL.
+        const dataUrl = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = () => reject(reader.error);
+          reader.readAsDataURL(blob);
+        }).catch(() => null);
+
+        if (!dataUrl) {
+          statusText.textContent =
+            "couldn't prepare the image — please try again.";
+          return;
+        }
+
+        // Try opening a dedicated image page.
+        let newTab = null;
+
+        try {
+          newTab = window.open("", "_blank");
+        } catch (error) {
+          newTab = null;
+        }
+
+        if (newTab) {
+          try {
+            newTab.document.title = fileName;
+            newTab.document.body.innerHTML = "";
+
+            const style = newTab.document.createElement("style");
+            style.textContent = `
+              body {
+                margin: 0;
+                padding: 16px;
+                text-align: center;
+                font-family: sans-serif;
+                background: #f7edf5;
+                color: #795777;
+              }
+              img {
+                display: block;
+                width: 100%;
+                height: auto;
+                margin: 20px auto;
+              }
+              a {
+                display: inline-block;
+                padding: 12px 18px;
+                border-radius: 20px;
+                background: #cbaedc;
+                color: white;
+                text-decoration: none;
+              }
+            `;
+
+            newTab.document.head.appendChild(style);
+
+            const heading = newTab.document.createElement("p");
+            heading.textContent = "🌸 your twibbon is ready!";
+
+            const image = newTab.document.createElement("img");
+            image.src = dataUrl;
+            image.alt = "Your Livia twibbon";
+
+            const instruction = newTab.document.createElement("p");
+            instruction.textContent =
+              "On iPhone, tap and hold the image, then choose Save to Photos.";
+
+            const link = newTab.document.createElement("a");
+            link.href = dataUrl;
+            link.download = fileName;
+            link.textContent = "Download liviaedenic27.png";
+
+            newTab.document.body.append(
+              heading, image, instruction, link
+            );
+
+            statusText.textContent =
+              "your twibbon is ready ♡ tap and hold the image to save it.";
+            return;
+          } catch (error) {
+            try {
+              newTab.close();
+            } catch (_) {}
+          }
+        }
+
+        // Last fallback: attempt a normal browser download.
         const link = document.createElement("a");
-
-        link.href = url;
-        link.download = "liviaedenic27.png";
-        link.style.display = "none";
-
+        link.href = dataUrl;
+        link.download = fileName;
+        link.target = "_blank";
+        link.rel = "noopener";
         document.body.appendChild(link);
         link.click();
         link.remove();
 
-        // Backup link for in-app browsers that open an image preview.
-        statusText.innerHTML =
-          'if the image opens as a preview, ' +
-          '<a href="' + url + '" download="liviaedenic27.png">' +
-          'tap here to save liviaedenic27.png</a> ♡';
-
-        // Keep the image URL alive for the backup link.
-        setTimeout(() => {
-          URL.revokeObjectURL(url);
-        }, 60000);
-
+        statusText.textContent =
+          "if saving doesn't work in Telegram, open this page in Safari and try again ♡";
       }, "image/png");
     });
 
