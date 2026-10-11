@@ -386,7 +386,7 @@
       <p class="intro">
         frame your heart in this stardust vignette and join the whimsical
         celebration under the spell of
-        <strong>#LiviaEdenic27!</strong> 🌸✨
+        <strong>#LiviaEdenic27!</strong> 
       </p>
     </header>
 
@@ -483,8 +483,20 @@
     const downloadButton = document.getElementById("download");
     const statusText = document.getElementById("status");
 
+    // Frame filename: livia frame.png
     const frame = new Image();
-    frame.src = "./livia-frame.png";
+    frame.onload = () => {
+      draw();
+      statusText.textContent = "Your twibbon frame is ready.";
+    };
+
+    frame.onerror = () => {
+      draw();
+      statusText.textContent =
+        "Frame not found. Check the exact filename and extension in your GitHub repository.";
+    };
+
+    frame.src = "./livia%20frame.png";
 
     let photo = null;
     let photoScale = 1;
@@ -532,17 +544,6 @@
         ctx.drawImage(frame, 0, 0, 800, 800);
       }
     }
-
-    frame.onload = () => {
-      draw();
-      statusText.textContent = "Your twibbon frame is ready.";
-    };
-
-    frame.onerror = () => {
-      draw();
-      statusText.textContent =
-        "Frame not found. Check that livia-frame.png is in your repository.";
-    };
 
     photoInput.addEventListener("change", (event) => {
       const file = event.target.files && event.target.files[0];
