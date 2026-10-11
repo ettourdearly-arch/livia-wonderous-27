@@ -4,126 +4,513 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Livia's Whimsical Garden ♡</title>
+<meta name="theme-color" content="#f9e9f1">
+<title>Livia's Edenic Arbor ✿</title>
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Great+Vibes&display=swap');
-*{box-sizing:border-box}
-body{margin:0;background:radial-gradient(ellipse at top,#f5dce9,#fff8fb 65%,#e9def1);color:#805b77;font-family:'Cormorant Garamond',serif}
-main{max-width:520px;margin:auto;padding:26px 17px 38px}
-.top{text-align:center;font-size:12px;letter-spacing:3px}
-h1{text-align:center;font:clamp(43px,11vw,64px) 'Great Vibes',cursive;color:#a56f91;margin:18px 0 8px}
-.subtitle{text-align:center;font-size:17px;font-style:italic}
-.ornament{text-align:center;color:#bd8eae;letter-spacing:4px;margin:18px 0}
-.card{background:#fffafce8;border:1px solid #e6c9da;border-radius:22px;padding:16px;box-shadow:0 8px 30px #b68da51c}
-h2{text-align:center;font-size:25px;font-weight:500;margin:5px}
-.note{text-align:center;font-style:italic}
-.preview{width:100%;aspect-ratio:1;border:1px solid #ead4e1;border-radius:12px;overflow:hidden;background:#f2e7ee}
-canvas{width:100%;height:100%;display:block;touch-action:none}
-label{display:block;margin:17px 0 7px;font-size:17px}
-input[type=file]{width:100%;font-size:14px}
-input[type=range]{width:100%;accent-color:#b57f9e}
-button{width:100%;border-radius:30px;padding:13px;margin-top:12px;font:17px 'Cormorant Garamond',serif;cursor:pointer}
-.primary{border:0;background:linear-gradient(120deg,#bd89a7,#9f7db4);color:white}
-.secondary{border:1px solid #bd8ca9;background:#fff7fb;color:#895e7d}
-.hint{font-size:14px;font-style:italic;line-height:1.5}
-footer{text-align:center;font-size:14px;line-height:1.8;margin-top:22px}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap');
+
+:root {
+  --pink: #c58bab;
+  --rose: #a66f91;
+  --plum: #805b79;
+  --line: #e8c8da;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--plum);
+  font-family: 'Cormorant Garamond', serif;
+  background-color: #fbf0f6;
+  background-image:
+    radial-gradient(ellipse at 10% 10%, #e8c4dc 0%, transparent 35%),
+    radial-gradient(ellipse at 90% 20%, #e3d4f0 0%, transparent 33%),
+    radial-gradient(ellipse at 10% 70%, #f2d4dc 0%, transparent 35%),
+    radial-gradient(ellipse at 90% 85%, #e8d8ee 0%, transparent 35%),
+    repeating-linear-gradient(12deg, #ffffff0a 0 1px, transparent 1px 5px);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+.doodle-border {
+  text-align: center;
+  color: #b486a6;
+  font-size: 17px;
+  letter-spacing: 4px;
+  line-height: 2;
+  padding: 12px 8px;
+  overflow-wrap: anywhere;
+  text-shadow: 0 0 12px #fff;
+}
+
+.page {
+  width: min(100%, 570px);
+  margin: auto;
+  padding: 0 17px 35px;
+}
+
+.eyebrow {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 3px;
+  line-height: 1.9;
+  color: #a97998;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(43px, 11vw, 68px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 10px 0;
+  color: #ad789b;
+  text-shadow: 1px 2px #fff, 0 0 16px #e8c4da;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  margin: 4px 0 17px;
+}
+
+.intro {
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.65;
+  padding: 0 5px;
+}
+
+.ornament {
+  text-align: center;
+  color: #bd8bab;
+  font-size: 17px;
+  letter-spacing: 3px;
+  margin: 17px 0;
+}
+
+.card {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 0% 0%, #f8e4efaa, transparent 45%),
+    radial-gradient(ellipse at 100% 100%, #eee2f5aa, transparent 45%),
+    #fffaf2ed;
+  border: 1px solid var(--line);
+  border-radius: 24px 24px 35px 22px;
+  padding: 17px;
+  box-shadow: 0 9px 30px #bc8ba31c, inset 0 0 22px #f1dce91c;
+}
+
+.card::before {
+  content: "✧";
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background: #fff6fa;
+  color: #bd8bab;
+  font-size: 25px;
+  padding: 0 6px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 500;
+  margin: 5px 0;
+}
+
+.helper {
+  text-align: center;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.5;
+  margin: 6px 0 17px;
+}
+
+.preview {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid #e8ccdc;
+  border-radius: 15px;
+  background-color: #f4e5ed;
+  background-image:
+    linear-gradient(45deg,#ead9e4 25%,transparent 25%),
+    linear-gradient(-45deg,#ead9e4 25%,transparent 25%),
+    linear-gradient(45deg,transparent 75%,#ead9e4 75%),
+    linear-gradient(-45deg,transparent 75%,#ead9e4 75%);
+  background-size: 18px 18px;
+  background-position: 0 0,0 9px,9px -9px,-9px 0;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+label {
+  display: block;
+  font-size: 17px;
+  margin: 17px 0 7px;
+}
+
+input[type="file"] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  font: 14px Arial, sans-serif;
+  color: var(--plum);
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #b77fa1;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 13px 15px;
+  margin-top: 12px;
+  border-radius: 30px;
+  font: 17px 'Cormorant Garamond', serif;
+  cursor: pointer;
+}
+
+.primary {
+  color: white;
+  border: 1px solid #bd89a8;
+  background: linear-gradient(120deg,#c28eaa,#a18abb);
+  box-shadow: 0 5px 14px #b78baa30;
+}
+
+.secondary {
+  color: #956c89;
+  border: 1px solid #dfbdd1;
+  background: #fff8fb;
+}
+
+.tiny-note {
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.link {
+  color: #a66f91;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.contact {
+  display: block;
+  padding: 10px;
+  margin: 9px 0;
+  border: 1px dashed #e1bed1;
+  border-radius: 14px;
+  background: #fff8fb;
+  text-align: center;
+  line-height: 1.6;
+  text-decoration: none;
+  color: #966987;
+}
+
+.wishes {
+  text-align: center;
+  line-height: 1.65;
+}
+
+.credits {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+footer {
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.8;
+  padding-top: 14px;
+}
+
+@media (max-width: 380px) {
+  .page { padding-inline: 12px; }
+  .card { padding: 13px; }
+  .intro { font-size: 16px; }
+}
 </style>
 </head>
+
 <body>
-<main>
-  <div class="top">✧ A LITTLE BIRTHDAY REVERIE ✧</div>
-  <h1>Livia's Wonderland</h1>
-  <p class="subtitle">a roseate garden of wishes & wonder</p>
-  <div class="ornament">୨୧ · · ✦ · · ♡ · · ✦ · · ୨୧</div>
+
+<div class="doodle-border">
+  ✧ 𓍢ִ໋🌷͙֒ ⋆｡°✩ ♡ ✧ ❀ ˚₊‧꒰ა ☆ ໒꒱ ‧₊˚ ✧
+</div>
+
+<main class="page">
+
+  <header>
+    <div class="eyebrow">✧ A SACRED JUBILEE DREAMSCAPE ✧</div>
+    <h1>Livia's Edenic Arbor</h1>
+    <p class="subtitle">a blooming tapestry of dreams & enchantment</p>
+
+    <div class="ornament">୨୧ ˚₊‧ ✿ ‧₊˚ ♡ ˚₊‧ ✧ ‧₊˚ ୨୧</div>
+
+    <p class="intro">
+      frame your heart in this stardust vignette and join the
+      whimsical celebration under the spell of
+      <strong>#LiviaEdenic27</strong>! 🌸✨
+    </p>
+
+    <div class="ornament">𓍢ִ໋🌷͙֒ ⋆｡°✩ ♡ ✩°｡⋆ 🌷͙֒𓍢ִ໋</div>
+  </header>
 
   <section class="card">
-    <h2>Adorn thy portrait</h2>
-    <p class="note">a little magic, made just for you ♡</p>
-    <div class="preview"><canvas id="canvas" width="800" height="800"></canvas></div>
+    <h2>✿ let's make a little magic! ✿</h2>
+    <p class="helper">
+      pick a portrait, sprinkle a little stardust,
+      and let the birthday daydream begin ♡
+    </p>
 
-    <label for="photo">✧ Choose thy portrait</label>
+    <div class="preview">
+      <canvas id="canvas" width="800" height="800"></canvas>
+    </div>
+
+    <label for="photo">♡ choose a photo</label>
     <input id="photo" type="file" accept="image/*">
 
-    <label for="zoom">✧ Adjust the portrait</label>
+    <label for="zoom">✧ adjust the photo size</label>
     <input id="zoom" type="range" min="0.5" max="3" value="1" step="0.01">
 
-    <button class="secondary" id="reset">↺ Reposition thy portrait</button>
-    <button class="primary" id="download">✧ Download thy twibbon ♡</button>
-    <p class="hint">Drag thy portrait to find its loveliest position.</p>
+    <button class="secondary" id="reset">
+      ↺ start the little daydream anew
+    </button>
+
+    <button class="primary" id="download">
+      ✧ download my twibbon! ♡
+    </button>
+
+    <p class="tiny-note">
+      a little nudge here, a little zoom there —
+      make yourself at home in the garden! ✿
+    </p>
   </section>
 
-  <div class="ornament">✦ · · · ❀ · · · ✦</div>
-  <footer>fashioned with love, stardust & rosewater ♡<br>#LiviaEdenic27</footer>
+  <div class="doodle-border">˚₊‧꒰ა ☆ ໒꒱ ‧₊˚ ♡ ˚₊‧ ✧ ‧₊˚</div>
+
+  <section class="card wishes">
+    <div class="eyebrow">✧ THE ROSEATE MISSIVES ✧</div>
+
+    <h2>A Posy of Heartfelt Benedictions</h2>
+
+    <p>
+      A little repository of fond felicitations, petal-soft
+      affections, and starry-eyed well-wishes, lovingly
+      bestowed upon Livia's most wondrous natal jubilee.
+    </p>
+
+    <a class="contact" href="https://t.me/ettourdearly"
+       target="_blank" rel="noopener">
+      ✉ tender missives may be bestowed upon the host<br>
+      <strong>t.me/ettourdearly ↗</strong>
+    </a>
+
+    <a class="contact" href="https://t.me/sylphidewaltz"
+       target="_blank" rel="noopener">
+      ❀ the sylvan chronicle of this little reverie<br>
+      <strong>t.me/sylphidewaltz ↗</strong>
+    </a>
+  </section>
+
+  <div class="doodle-border">✧･ﾟ: *✧･ﾟ:* ♡ *:･ﾟ✧*:･ﾟ✧</div>
+
+  <section class="card credits">
+    <div class="eyebrow">✧ A PROUDLY WHIMSICAL UNDERTAKING ✧</div>
+
+    <p>
+      dreamt into being by
+      <a class="link" href="https://t.me/artlucas"
+         target="_blank" rel="noopener">@artlucas</a>
+    </p>
+
+    <p>
+      a collaborative confection by
+      <a class="link" href="https://t.me/trinketslab"
+         target="_blank" rel="noopener">@trinketslab</a>
+    </p>
+
+    <div class="ornament">❀ made of stardust, reveries & roseate dreams ❀</div>
+  </section>
+
+  <footer>
+    gathered with love, doodles & a pocketful of stardust ♡<br>
+    #LiviaEdenic27
+  </footer>
+
 </main>
 
+<div class="doodle-border">
+  ✿ ୨୧ ✧ ♡ ❀ ✧ ୨୧ ✿
+</div>
+
 <script>
-const canvas=document.getElementById('canvas');
-const ctx=canvas.getContext('2d');
-const photoInput=document.getElementById('photo');
-const zoomInput=document.getElementById('zoom');
-let photo=null,frame=null,scale=1,x=0,y=0;
-let dragging=false,lastX=0,lastY=0;
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const photoInput = document.getElementById('photo');
+const zoomInput = document.getElementById('zoom');
 
-function draw(){
-  const w=canvas.width,h=canvas.height;
-  ctx.clearRect(0,0,w,h);
-  if(photo){
-    const fit=Math.max(w/photo.width,h/photo.height);
-    const dw=photo.width*fit*scale,dh=photo.height*fit*scale;
-    ctx.drawImage(photo,(w-dw)/2+x,(h-dh)/2+y,dw,dh);
-  }else{
-    ctx.fillStyle='#f5e8f0';ctx.fillRect(0,0,w,h);
-    ctx.fillStyle='#ad83a0';ctx.textAlign='center';
-    ctx.font='34px Georgia';ctx.fillText('✧ your portrait ✧',w/2,h/2-12);
-    ctx.font='23px Georgia';ctx.fillText('a little wish for Livia ♡',w/2,h/2+30);
+let photo = null;
+let frame = null;
+let scale = 1;
+let x = 0;
+let y = 0;
+let dragging = false;
+let lastX = 0;
+let lastY = 0;
+
+function draw() {
+  const w = canvas.width;
+  const h = canvas.height;
+
+  ctx.clearRect(0, 0, w, h);
+
+  if (photo) {
+    const fit = Math.max(w / photo.width, h / photo.height);
+    const dw = photo.width * fit * scale;
+    const dh = photo.height * fit * scale;
+
+    ctx.drawImage(photo, (w - dw) / 2 + x, (h - dh) / 2 + y, dw, dh);
+  } else {
+    ctx.fillStyle = '#f5e8f0';
+    ctx.fillRect(0, 0, w, h);
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#ad83a0';
+    ctx.font = '34px Georgia';
+    ctx.fillText('✧ your photo goes here ✧', w / 2, h / 2 - 12);
+    ctx.font = '23px Georgia';
+    ctx.fillText('a little wish for Livia ♡', w / 2, h / 2 + 30);
   }
-  if(frame)ctx.drawImage(frame,0,0,w,h);
+
+  if (frame) ctx.drawImage(frame, 0, 0, w, h);
 }
 
-const frameImage=new Image();
-frameImage.onload=()=>{frame=frameImage;draw()};
-frameImage.onerror=()=>{console.error('Could not load livia-frame.png')};
-frameImage.src='./livia-frame.png';
+const frameImage = new Image();
 
-photoInput.addEventListener('change',e=>{
-  const file=e.target.files[0];if(!file)return;
-  const url=URL.createObjectURL(file),img=new Image();
-  img.onload=()=>{photo=img;scale=1;x=0;y=0;zoomInput.value=1;draw();URL.revokeObjectURL(url)};
-  img.onerror=()=>{URL.revokeObjectURL(url);alert('Please choose another image.')};
-  img.src=url;
+frameImage.onload = () => {
+  frame = frameImage;
+  draw();
+};
+
+frameImage.onerror = () => {
+  console.error('Could not load livia-frame.png');
+};
+
+frameImage.src = './livia-frame.png';
+
+photoInput.addEventListener('change', event => {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const url = URL.createObjectURL(file);
+  const img = new Image();
+
+  img.onload = () => {
+    photo = img;
+    scale = 1;
+    x = 0;
+    y = 0;
+    zoomInput.value = 1;
+    draw();
+    URL.revokeObjectURL(url);
+  };
+
+  img.onerror = () => {
+    URL.revokeObjectURL(url);
+    alert('This photo could not be opened. Please choose another one ♡');
+  };
+
+  img.src = url;
 });
-zoomInput.addEventListener('input',()=>{scale=Number(zoomInput.value);draw()});
 
-function point(e){
-  const r=canvas.getBoundingClientRect();
-  return{x:(e.clientX-r.left)*canvas.width/r.width,y:(e.clientY-r.top)*canvas.height/r.height};
+zoomInput.addEventListener('input', () => {
+  scale = Number(zoomInput.value);
+  draw();
+});
+
+function getPoint(event) {
+  const rect = canvas.getBoundingClientRect();
+  return {
+    x: (event.clientX - rect.left) * canvas.width / rect.width,
+    y: (event.clientY - rect.top) * canvas.height / rect.height
+  };
 }
-canvas.addEventListener('pointerdown',e=>{
-  if(!photo)return;dragging=true;canvas.setPointerCapture(e.pointerId);
-  const p=point(e);lastX=p.x;lastY=p.y;
-});
-canvas.addEventListener('pointermove',e=>{
-  if(!dragging)return;const p=point(e);
-  x+=p.x-lastX;y+=p.y-lastY;lastX=p.x;lastY=p.y;draw();
-});
-canvas.addEventListener('pointerup',()=>dragging=false);
-canvas.addEventListener('pointercancel',()=>dragging=false);
 
-document.getElementById('reset').onclick=()=>{
-  scale=1;x=0;y=0;zoomInput.value=1;draw();
-};
-document.getElementById('download').onclick=()=>{
-  if(!photo){alert('Choose thy portrait first ♡');return}
-  if(!frame){alert('The twibbon frame is still loading. Refresh and try again.');return}
-  canvas.toBlob(blob=>{
-    if(!blob){alert('Could not create the PNG. Please try again.');return}
-    const url=URL.createObjectURL(blob),a=document.createElement('a');
-    a.href=url;a.download='Livia-Wonderous-27.png';a.click();
-    setTimeout(()=>URL.revokeObjectURL(url),1000);
-  },'image/png');
-};
+canvas.addEventListener('pointerdown', event => {
+  if (!photo) return;
+  dragging = true;
+  canvas.setPointerCapture(event.pointerId);
+  const p = getPoint(event);
+  lastX = p.x;
+  lastY = p.y;
+});
+
+canvas.addEventListener('pointermove', event => {
+  if (!dragging) return;
+  const p = getPoint(event);
+  x += p.x - lastX;
+  y += p.y - lastY;
+  lastX = p.x;
+  lastY = p.y;
+  draw();
+});
+
+canvas.addEventListener('pointerup', () => dragging = false);
+canvas.addEventListener('pointercancel', () => dragging = false);
+
+document.getElementById('reset').addEventListener('click', () => {
+  scale = 1;
+  x = 0;
+  y = 0;
+  zoomInput.value = 1;
+  draw();
+});
+
+document.getElementById('download').addEventListener('click', () => {
+  if (!photo) {
+    alert('Choose a photo first, little daydreamer! ♡');
+    return;
+  }
+
+  if (!frame) {
+    alert('The garden frame is still loading. Please refresh and try again ♡');
+    return;
+  }
+
+  canvas.toBlob(blob => {
+    if (!blob) {
+      alert('The image could not be created. Please try again.');
+      return;
+    }
+
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Livia-Edenic-27.png';
+    link.click();
+
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }, 'image/png');
+});
+
 draw();
 </script>
 </body>
 </html>
-
